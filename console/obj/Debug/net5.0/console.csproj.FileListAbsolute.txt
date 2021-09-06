@@ -1,0 +1,16 @@
+/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/console/bin/Debug/net5.0/console
+/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/console/bin/Debug/net5.0/console.deps.json
+/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/console/bin/Debug/net5.0/console.runtimeconfig.json
+/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/console/bin/Debug/net5.0/console.runtimeconfig.dev.json
+/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/console/bin/Debug/net5.0/console.dll
+/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/console/bin/Debug/net5.0/ref/console.dll
+/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/console/bin/Debug/net5.0/console.pdb
+/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/console/obj/Debug/net5.0/console.csproj.AssemblyReference.cache
+/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/console/obj/Debug/net5.0/console.GeneratedMSBuildEditorConfig.editorconfig
+/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/console/obj/Debug/net5.0/console.AssemblyInfoInputs.cache
+/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/console/obj/Debug/net5.0/console.AssemblyInfo.cs
+/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/console/obj/Debug/net5.0/console.csproj.CoreCompileInputs.cache
+/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/console/obj/Debug/net5.0/console.dll
+/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/console/obj/Debug/net5.0/ref/console.dll
+/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/console/obj/Debug/net5.0/console.pdb
+/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/console/obj/Debug/net5.0/console.genruntimeconfig.cache
