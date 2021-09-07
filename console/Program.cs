@@ -8,10 +8,10 @@ namespace console
     {
         static void Main(string[] args)
         {
-            var contacts = new Dictionary<int, Contact>();
+            var contacts = new Dictionary<Guid, Contact>();
             var exit = false;
 
-            Affichage();
+            DisplayMenu();
 
             while (!exit)
             {
@@ -39,14 +39,14 @@ namespace console
                 
                 if (!exit)
                 {
-                    Affichage();
+                    DisplayMenu();
                 }
                 
                 Console.WriteLine();
             }
         }
 
-        private static void Affichage()
+        private static void DisplayMenu()
         {
             Console.WriteLine("Bonjour & Bienvenu");
             Console.WriteLine("Que voulez vous faire ?");
