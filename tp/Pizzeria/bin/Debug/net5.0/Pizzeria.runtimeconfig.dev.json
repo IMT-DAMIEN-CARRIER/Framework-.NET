@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/home/MEYCLUB/dcarrier/.dotnet/store/|arch|/|tfm|",
+      "/home/MEYCLUB/dcarrier/.nuget/packages"
+    ]
+  }
+}
