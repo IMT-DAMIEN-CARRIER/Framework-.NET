@@ -56,7 +56,7 @@ namespace console
 
                     if (contacts.Count >= valueInt)
                     {
-                        contacts.Remove(valueInt);
+                        contacts.Remove(Guid.Parse(value));
                         Console.WriteLine();
                         Console.WriteLine("Le contact a bien été supprimé");
                         Console.WriteLine();
@@ -95,7 +95,7 @@ namespace console
 
                     if (contacts.Count >= valueInt)
                     {
-                        var contact = contacts[valueInt];
+                        var contact = contacts[Guid.Parse(value)];
                         
                         Console.WriteLine();
                         Console.WriteLine("Voici le contact choisi :");
