@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/HttpRequest/HttpRequest.csproj",
+      "projectUniqueName": "/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/tp/HttpRequest/HttpRequest.csproj",
       "projectName": "HttpRequest",
-      "projectPath": "/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/HttpRequest/HttpRequest.csproj",
+      "projectPath": "/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/tp/HttpRequest/HttpRequest.csproj",
       "packagesPath": "/home/MEYCLUB/dcarrier/.nuget/packages/",
-      "outputPath": "/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/HttpRequest/obj/",
+      "outputPath": "/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/tp/HttpRequest/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/MEYCLUB/dcarrier/.nuget/NuGet/NuGet.Config"

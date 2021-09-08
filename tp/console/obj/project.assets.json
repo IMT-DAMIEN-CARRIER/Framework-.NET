@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/console/console.csproj",
+      "projectUniqueName": "/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/tp/console/console.csproj",
       "projectName": "console",
-      "projectPath": "/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/console/console.csproj",
+      "projectPath": "/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/tp/console/console.csproj",
       "packagesPath": "/home/MEYCLUB/dcarrier/.nuget/packages/",
-      "outputPath": "/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/console/obj/",
+      "outputPath": "/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/tp/console/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/MEYCLUB/dcarrier/.nuget/NuGet/NuGet.Config"

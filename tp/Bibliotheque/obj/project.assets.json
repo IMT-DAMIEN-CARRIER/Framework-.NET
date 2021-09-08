@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/Bibliotheque/Bibliotheque.csproj",
+      "projectUniqueName": "/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/tp/Bibliotheque/Bibliotheque.csproj",
       "projectName": "Bibliotheque",
-      "projectPath": "/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/Bibliotheque/Bibliotheque.csproj",
+      "projectPath": "/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/tp/Bibliotheque/Bibliotheque.csproj",
       "packagesPath": "/home/MEYCLUB/dcarrier/.nuget/packages/",
-      "outputPath": "/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/Bibliotheque/obj/",
+      "outputPath": "/home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/tp/Bibliotheque/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/MEYCLUB/dcarrier/.nuget/NuGet/NuGet.Config"

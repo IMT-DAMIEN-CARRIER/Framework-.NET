@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = Bibliotheque
-build_property.ProjectDir = /home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/Bibliotheque/
+build_property.ProjectDir = /home/MEYCLUB/dcarrier/Documents/PRIVÉ/Ecole/IMT/3A/framework-ASP/framework-dot-net/tp/Bibliotheque/
