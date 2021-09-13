@@ -1,0 +1,24 @@
+﻿<Window x:Class="PizzaUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PizzaUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button Content="ok" Width="80" HorizontalAlignment="Left" Margin="380,244,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <TextBox HorizontalAlignment="Center" Margin="0,180,0,0" Text="{Binding LastName}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Center" Text="{Binding FirstName}" TextWrapping="Wrap" VerticalAlignment="Center" Width="120"/>
+        <ListBox ItemsSource="{Binding Contacts}" Width="250" Height="300" Margin="516,67,34,67">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding FirstName}"></TextBlock>
+                        <TextBlock Margin="5,0,0,0" Text="{Binding LastName}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "h+R4ZAfWEpufI952X98ZwET7RTC8NBtZDthnXA5/rxFr5M2X8DtV9IMQzHuUaN/f0lQtpeJ1EUEPYLzIPna8fw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\jpekmez\\source\\repos\\PizzaEF\\PizzaUI\\PizzaUI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jpekmez\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.8\\microsoft.netcore.app.host.win-x64.5.0.8.nupkg.sha512"
+  ],
+  "logs": []
+}
