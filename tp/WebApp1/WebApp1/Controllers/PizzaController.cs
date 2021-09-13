@@ -47,7 +47,7 @@ namespace WebApp1.Controllers
         // GET: Pizza/Create
         public IActionResult Create()
         {
-            ViewData["RestaurantId"] = new SelectList(_context.Restaurants, "Id", "Id");
+            ViewData["RestaurantId"] = new SelectList(_context.Restaurants, "Id", "Name");
             return View();
         }
 
@@ -64,7 +64,7 @@ namespace WebApp1.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RestaurantId"] = new SelectList(_context.Restaurants, "Id", "Id", pizza.RestaurantId);
+            ViewData["RestaurantId"] = new SelectList(_context.Restaurants, "Id", "Name", pizza.RestaurantId);
             return View(pizza);
         }
 
@@ -81,7 +81,7 @@ namespace WebApp1.Controllers
             {
                 return NotFound();
             }
-            ViewData["RestaurantId"] = new SelectList(_context.Restaurants, "Id", "Id", pizza.RestaurantId);
+            ViewData["RestaurantId"] = new SelectList(_context.Restaurants, "Id", "Name", pizza.RestaurantId);
             return View(pizza);
         }
 
@@ -117,7 +117,7 @@ namespace WebApp1.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RestaurantId"] = new SelectList(_context.Restaurants, "Id", "Id", pizza.RestaurantId);
+            ViewData["RestaurantId"] = new SelectList(_context.Restaurants, "Id", "Name", pizza.RestaurantId);
             return View(pizza);
         }
 
