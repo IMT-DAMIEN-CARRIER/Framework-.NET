@@ -15,32 +15,31 @@ namespace WebApp1.Controllers
             _context = context;
         }
 
-        // GET: Commande/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Buy(int? id)
         {
-            ViewData["RestaurantId"] = new SelectList(_context.Restaurants, "Id", "Name");
-            ViewData["Pizza"] = new SelectList(_context.Pizzas, "Id", "Name");
-            return View();
-        }
+            var pizza = await _context.Pizzas.FindAsync(id);
 
-        // POST: Commande/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Restaurant,Pizza")] Commande commande)
-        {
-            if (ModelState.IsValid)
+            if (null == pizza)
             {
-                _context.Add(commande);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return NotFound();
             }
 
-            ViewData["RestaurantId"] = new SelectList(_context.Restaurants, "Id", "Name");
-            ViewData["Pizza"] = new SelectList(_context.Pizzas, "Id", "Name");
+            var order = new Commande
+            {
+                Pizza = pizza,
+                PizzaId = pizza.Id
+            };
 
-            return View(commande);
+            return View(order);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Buy(Commande commande)
+        {
+            _context.Commandes.Add(commande);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(PizzaController.Index), "Pizzas");
         }
     }
 }
