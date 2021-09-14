@@ -1,0 +1,12 @@
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Shared/bin/Debug/net5.0/PizzaWebAssemblyApp.Shared.deps.json
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Shared/bin/Debug/net5.0/PizzaWebAssemblyApp.Shared.dll
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Shared/bin/Debug/net5.0/ref/PizzaWebAssemblyApp.Shared.dll
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Shared/bin/Debug/net5.0/PizzaWebAssemblyApp.Shared.pdb
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Shared/obj/Debug/net5.0/PizzaWebAssemblyApp.Shared.csproj.AssemblyReference.cache
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Shared/obj/Debug/net5.0/PizzaWebAssemblyApp.Shared.GeneratedMSBuildEditorConfig.editorconfig
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Shared/obj/Debug/net5.0/PizzaWebAssemblyApp.Shared.AssemblyInfoInputs.cache
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Shared/obj/Debug/net5.0/PizzaWebAssemblyApp.Shared.AssemblyInfo.cs
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Shared/obj/Debug/net5.0/PizzaWebAssemblyApp.Shared.csproj.CoreCompileInputs.cache
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Shared/obj/Debug/net5.0/PizzaWebAssemblyApp.Shared.dll
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Shared/obj/Debug/net5.0/ref/PizzaWebAssemblyApp.Shared.dll
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Shared/obj/Debug/net5.0/PizzaWebAssemblyApp.Shared.pdb

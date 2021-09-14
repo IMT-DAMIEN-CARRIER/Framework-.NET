@@ -1,0 +1,142 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Client/PizzaWebAssemblyApp.Client.csproj": {}
+  },
+  "projects": {
+    "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Client/PizzaWebAssemblyApp.Client.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Client/PizzaWebAssemblyApp.Client.csproj",
+        "projectName": "PizzaWebAssemblyApp.Client",
+        "projectPath": "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Client/PizzaWebAssemblyApp.Client.csproj",
+        "packagesPath": "/Users/dams/.nuget/packages/",
+        "outputPath": "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Client/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/dams/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Shared/PizzaWebAssemblyApp.Shared.csproj": {
+                "projectPath": "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Shared/PizzaWebAssemblyApp.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Components.WebAssembly": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly.DevServer": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "System.Net.Http.Json": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Runtime.browser-wasm",
+              "version": "[5.0.9, 5.0.9]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.400/RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "browser-wasm": {
+          "#import": []
+        }
+      }
+    },
+    "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Shared/PizzaWebAssemblyApp.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Shared/PizzaWebAssemblyApp.Shared.csproj",
+        "projectName": "PizzaWebAssemblyApp.Shared",
+        "projectPath": "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Shared/PizzaWebAssemblyApp.Shared.csproj",
+        "packagesPath": "/Users/dams/.nuget/packages/",
+        "outputPath": "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Shared/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/dams/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.400/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
