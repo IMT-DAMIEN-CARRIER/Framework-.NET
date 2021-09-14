@@ -1,0 +1,36 @@
+﻿<Properties StartupConfiguration="{EBFC6B57-5E8D-4B84-BAA4-363537F047D5}|Default">
+  <MonoDevelop.Ide.ItemProperties.PizzaApi PreferredExecutionTarget="/Applications/Opera.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="PizzaApi/Repository/OrderRepository.cs">
+    <Files>
+      <File FileName="PizzaApi/Repository/IPizzaRepository.cs" Line="10" Column="39" />
+      <File FileName="PizzaApi/Repository/PizzaRepository.cs" Line="15" Column="10" />
+      <File FileName="PizzaApi/Repository/IRestaurantRepository.cs" Line="10" Column="49" />
+      <File FileName="PizzaApi/Repository/RestaurantRepository.cs" Line="10" Column="45" />
+      <File FileName="PizzaApi/Controllers/PizzaController.cs" Line="16" Column="45" />
+      <File FileName="PizzaApi/Repository/OrderRepository.cs" Line="16" Column="1" />
+      <File FileName="PizzaApi/Repository/IOrderRepository.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="PizzaApi" expanded="True">
+            <Node name="PizzaApi" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Migrations" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Repository" expanded="True">
+                <Node name="OrderRepository.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

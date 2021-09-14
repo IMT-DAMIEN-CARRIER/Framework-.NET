@@ -1,0 +1,88 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0": {
+      "Pizza.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Pizza.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Pizza.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Pizza.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Pizza.Domain/Pizza.Domain.csproj",
+      "msbuildProject": "../Pizza.Domain/Pizza.Domain.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0": [
+      "Pizza.Domain >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "/Users/dams/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/dams/IMT/3A/dotnet/framework-dot-net/sujet_tp/PizzaWeb/Pizza.Application/Pizza.Application.csproj",
+      "projectName": "Pizza.Application",
+      "projectPath": "/Users/dams/IMT/3A/dotnet/framework-dot-net/sujet_tp/PizzaWeb/Pizza.Application/Pizza.Application.csproj",
+      "packagesPath": "/Users/dams/.nuget/packages/",
+      "outputPath": "/Users/dams/IMT/3A/dotnet/framework-dot-net/sujet_tp/PizzaWeb/Pizza.Application/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/dams/.config/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "projectReferences": {
+            "/Users/dams/IMT/3A/dotnet/framework-dot-net/sujet_tp/PizzaWeb/Pizza.Domain/Pizza.Domain.csproj": {
+              "projectPath": "/Users/dams/IMT/3A/dotnet/framework-dot-net/sujet_tp/PizzaWeb/Pizza.Domain/Pizza.Domain.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0": {
+        "targetAlias": "net5.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.400/RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
