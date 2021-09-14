@@ -152,3 +152,4 @@
 /Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaApi/PizzaApi/obj/Debug/net5.0/ref/PizzaApi.dll
 /Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaApi/PizzaApi/obj/Debug/net5.0/PizzaApi.pdb
 /Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaApi/PizzaApi/obj/Debug/net5.0/PizzaApi.genruntimeconfig.cache
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaApi/PizzaApi/obj/Debug/net5.0/PizzaApi.csproj.AssemblyReference.cache

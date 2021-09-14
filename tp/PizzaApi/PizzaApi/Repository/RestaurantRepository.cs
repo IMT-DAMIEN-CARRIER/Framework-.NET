@@ -14,7 +14,27 @@ namespace PizzaApi.Repository
             _context = context;
         }
 
-        public Task<List<Restaurant>> GetRestaurants()
+        public async Task Add(Restaurant restaurant)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task Update(Restaurant restaurant)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task Delete(Restaurant restaurant)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<IEnumerable<Restaurant>> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<Restaurant> GetById(int id)
         {
             throw new NotImplementedException();
         }

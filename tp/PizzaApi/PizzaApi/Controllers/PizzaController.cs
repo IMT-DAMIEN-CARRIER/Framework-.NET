@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PizzaApi.Models;
+using PizzaApi.Repository;
 
 namespace PizzaApi.Controllers
 {
@@ -13,25 +14,26 @@ namespace PizzaApi.Controllers
     [ApiController]
     public class PizzaController : ControllerBase
     {
-        private readonly MyContext _context;
+        private readonly IPizzaRepository _pizzaRepository;
 
-        public PizzaController(MyContext context)
+        public PizzaController(IPizzaRepository pizzaRepository)
         {
-            _context = context;
+            _pizzaRepository = pizzaRepository;
         }
 
         // GET: api/Pizza
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Pizza>>> GetPizzas()
         {
-            return await _context.Pizzas.ToListAsync();
+            var result = await _pizzaRepository.GetAll();
+            return Ok(result);
         }
 
         // GET: api/Pizza/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Pizza>> GetPizza(int id)
         {
-            var pizza = await _context.Pizzas.FindAsync(id);
+            var pizza = await _pizzaRepository.GetById(id);
 
             if (pizza == null)
             {
@@ -51,23 +53,7 @@ namespace PizzaApi.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(pizza).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!PizzaExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            await _pizzaRepository.Update(pizza);
 
             return NoContent();
         }
@@ -77,8 +63,7 @@ namespace PizzaApi.Controllers
         [HttpPost]
         public async Task<ActionResult<Pizza>> PostPizza(Pizza pizza)
         {
-            _context.Pizzas.Add(pizza);
-            await _context.SaveChangesAsync();
+            await _pizzaRepository.Add(pizza);
 
             return CreatedAtAction("GetPizza", new { id = pizza.Id }, pizza);
         }
@@ -87,21 +72,16 @@ namespace PizzaApi.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePizza(int id)
         {
-            var pizza = await _context.Pizzas.FindAsync(id);
+            var pizza = await _pizzaRepository.GetById(id);
+            
             if (pizza == null)
             {
                 return NotFound();
             }
 
-            _context.Pizzas.Remove(pizza);
-            await _context.SaveChangesAsync();
+            await _pizzaRepository.Delete(pizza);
 
             return NoContent();
-        }
-
-        private bool PizzaExists(int id)
-        {
-            return _context.Pizzas.Any(e => e.Id == id);
         }
     }
 }

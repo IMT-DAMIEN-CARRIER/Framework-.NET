@@ -5,8 +5,7 @@ using PizzaApi.Models;
 
 namespace PizzaApi.Repository
 {
-    public interface IPizzaRepository
+    public interface IPizzaRepository : IRepository<Pizza>
     {
-        Task<List<Pizza>> getPizzas();
     }
 }
