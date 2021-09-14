@@ -46,6 +46,11 @@ namespace PizzaApi
             {
                 app.UseDeveloperExceptionPage();
             }
+            
+            app.UseSwagger();
+            app.UseSwaggerUI(c => {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API 1.0.0");
+            });
 
             app.UseHttpsRedirection();
 
@@ -56,11 +61,6 @@ namespace PizzaApi
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-            });
-
-            app.UseSwagger();
-            app.UseSwaggerUI(c => {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API 1.0.0");
             });
         }
     }
