@@ -83,7 +83,7 @@ using PizzaWebAssemblyApp.Client.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Client/Pages/FetchData.razor"
+#line 11 "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Client/_Imports.razor"
 using PizzaWebAssemblyApp.Shared;
 
 #line default
@@ -98,7 +98,7 @@ using PizzaWebAssemblyApp.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 38 "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Client/Pages/FetchData.razor"
+#line 37 "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Client/Pages/FetchData.razor"
        
     private WeatherForecast[] forecasts;
 

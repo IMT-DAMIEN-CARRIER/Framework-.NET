@@ -1,0 +1,38 @@
+@page "/Restaurants"
+@inject HttpClient Http
+
+<h1>Restaurant</h1>
+
+<p>Ajoutez vos restaurants</p>
+
+@if (restaurants == null)
+{
+     <p><em>Loading...</em></p>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var restaurant in restaurants)
+                {
+                    <tr>
+                        <td>@restaurant.Name</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+}
+
+@code {
+    private Restaurant[] restaurants;
+
+    protected override async Task OnInitializedAsync()
+    {
+        restaurants = await Http.GetFromJsonAsync<Restaurant[]>("Restaurant");
+    }
+}
