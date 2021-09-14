@@ -1,7 +1,7 @@
 ﻿self.assetsManifest = {
   "assets": [
     {
-      "hash": "sha256-ZlhaA9S5f706QWB1leZQto+WMyaEz6tyLxdFVQrSCfM=",
+      "hash": "sha256-CiecgNymgc91Rs9A9N0tBC0M0ChtG0KQaUZNoKhBJ8I=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -785,19 +785,19 @@
       "url": "_framework\/dotnet.5.0.9.js"
     },
     {
-      "hash": "sha256-myDN5v9kUQ2QfQIry9SadITxuzss9K1ImnHZdRF5kgY=",
+      "hash": "sha256-KOUeEHwKy3qaayoW0WtWXBcQBgk4xyX+hRbsj9ScH3c=",
       "url": "_framework\/PizzaWebAssemblyApp.Shared.dll"
     },
     {
-      "hash": "sha256-zzzwrH4eIGp683GKnfGq0V3LqihdTwSkql069iMe\/I0=",
+      "hash": "sha256-0n4L\/fHqgaK7RhPVjjmvP5P4HXNjaf1c7uSZTIEZHio=",
       "url": "_framework\/PizzaWebAssemblyApp.Shared.pdb"
     },
     {
-      "hash": "sha256-WN1wF2BiLqIAx4q4Ql0WA843qgq2XvpKar1NK0ve+kQ=",
+      "hash": "sha256-UvVV3ywKOgrLGPKhiJW6W5UMpuCSCM3bvUBl\/oXmKOA=",
       "url": "_framework\/PizzaWebAssemblyApp.Client.dll"
     },
     {
-      "hash": "sha256-NWGXmmgnbhecqOM6kT21GMueZu8WyLHlc6bNZvL4SSo=",
+      "hash": "sha256-zTCPUQaTCv\/e\/mWCqs0X9F1i9USHFI9sl8ksur26Iu4=",
       "url": "_framework\/PizzaWebAssemblyApp.Client.pdb"
     },
     {
@@ -1585,7 +1585,7 @@
       "url": "_framework\/dotnet.5.0.9.js.gz"
     },
     {
-      "hash": "sha256-LyUR9InYmpO0n0gQL9M9VwkB1VCq42Aron2hHvQwo04=",
+      "hash": "sha256-JSiaerT9KP0PrscqHmksVilSTwgDq8sImMoL+xYPw4Q=",
       "url": "_framework\/PizzaWebAssemblyApp.Shared.dll.gz"
     },
     {
@@ -1661,5 +1661,5 @@
       "url": "PizzaWebAssemblyApp.Client.bundle.scp.css"
     }
   ],
-  "version": "ZyvqBaGJ"
+  "version": "XbHBbV6S"
 };
