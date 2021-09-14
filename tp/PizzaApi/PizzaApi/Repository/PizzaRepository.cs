@@ -6,7 +6,7 @@ using PizzaApi.Models;
 
 namespace PizzaApi.Repository
 {
-    public class PizzaRepository : AbstractRepository<Pizza>
+    public class PizzaRepository : AbstractRepository<Pizza>, IPizzaRepository
     {
         public PizzaRepository(MyContext context) : base(context)
         {

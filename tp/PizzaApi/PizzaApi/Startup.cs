@@ -13,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using PizzaApi.Models;
+using PizzaApi.Repository;
 
 namespace PizzaApi
 {
@@ -28,6 +29,8 @@ namespace PizzaApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IPizzaRepository, PizzaRepository>();
+            services.AddScoped<IRestaurantRepository, RestaurantRepository>();
             services.AddDbContext<MyContext>(options => options.UseSqlite("Data Source=pizza.db"));
             services.AddControllers();
             services.AddSwaggerGen(c =>
