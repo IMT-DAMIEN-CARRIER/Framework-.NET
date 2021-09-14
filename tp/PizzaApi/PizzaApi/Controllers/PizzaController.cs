@@ -26,11 +26,12 @@ namespace PizzaApi.Controllers
         public async Task<ActionResult<IEnumerable<Pizza>>> GetPizzas()
         {
             var result = await _pizzaRepository.GetAll();
+            
             return Ok(result);
         }
 
         // GET: api/Pizza/5
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         public async Task<ActionResult<Pizza>> GetPizza(int id)
         {
             var pizza = await _pizzaRepository.GetById(id);
@@ -45,7 +46,7 @@ namespace PizzaApi.Controllers
 
         // PUT: api/Pizza/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
+        [HttpPut("{id:int}")]
         public async Task<IActionResult> PutPizza(int id, Pizza pizza)
         {
             if (id != pizza.Id)
@@ -69,17 +70,10 @@ namespace PizzaApi.Controllers
         }
 
         // DELETE: api/Pizza/5
-        [HttpDelete("{id}")]
+        [HttpDelete("{id:int}")]
         public async Task<IActionResult> DeletePizza(int id)
         {
-            var pizza = await _pizzaRepository.GetById(id);
-            
-            if (pizza == null)
-            {
-                return NotFound();
-            }
-
-            await _pizzaRepository.Delete(pizza);
+            await _pizzaRepository.Delete(id);
 
             return NoContent();
         }

@@ -7,7 +7,7 @@ namespace PizzaApi.Repository
     {
         Task Add(T item);
         Task Update(T item);
-        Task Delete(T item);
+        Task<bool> Delete(int id);
         Task<IEnumerable<T>> GetAll();
         Task<T> GetById(int id);
     }
