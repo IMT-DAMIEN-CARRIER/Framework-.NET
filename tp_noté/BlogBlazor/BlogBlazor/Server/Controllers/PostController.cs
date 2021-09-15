@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BlogBlazor.Data;
 using BlogBlazor.Data.Model;
+using BlogBlazor.Data.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -15,25 +16,25 @@ namespace BlogBlazor.Server.Controllers
     [ApiController]
     public class PostController : ControllerBase
     {
-        private readonly MyContext _context;
+        private readonly PostRepository _postRepository;
 
-        public PostController(MyContext context)
+        public PostController(PostRepository postRepository)
         {
-            _context = context;
+            _postRepository = postRepository;
         }
 
         // GET: api/Post
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Post>>> GetPosts()
         {
-            return await _context.Posts.ToListAsync();
+            return Ok(await _postRepository.GetAll());
         }
 
         // GET: api/Post/5
         [HttpGet("{id:int}")]
         public async Task<ActionResult<Post>> GetPost(int id)
         {
-            var post = await _context.Posts.FindAsync(id);
+            var post = await _postRepository.GetById(id);
 
             if (post == null)
             {
@@ -47,14 +48,14 @@ namespace BlogBlazor.Server.Controllers
         [HttpGet("{categoryName}")]
         public async Task<ActionResult<IEnumerable<Post>>> GetPostByCategory(string categoryName)
         {
-            var posts = await _context.Posts.Where(p => p.Category.Name.Equals(categoryName)).ToListAsync();
+            var posts = await _postRepository.GetPostByCategory(categoryName);
 
             if (posts == null)
             {
                 return NotFound();
             }
             
-            return posts;
+            return Ok(posts);
         }
 
         // PUT: api/Post/5
@@ -67,23 +68,7 @@ namespace BlogBlazor.Server.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(post).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!PostExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            await _postRepository.Update(post);
 
             return NoContent();
         }
@@ -93,8 +78,7 @@ namespace BlogBlazor.Server.Controllers
         [HttpPost]
         public async Task<ActionResult<Post>> PostPost(Post post)
         {
-            _context.Posts.Add(post);
-            await _context.SaveChangesAsync();
+            await _postRepository.Add(post);
 
             return CreatedAtAction("GetPost", new { id = post.Id }, post);
         }
@@ -103,21 +87,12 @@ namespace BlogBlazor.Server.Controllers
         [HttpDelete("{id:int}")]
         public async Task<IActionResult> DeletePost(int id)
         {
-            var post = await _context.Posts.FindAsync(id);
-            if (post == null)
+            if (!await _postRepository.Delete(id))
             {
                 return NotFound();
             }
 
-            _context.Posts.Remove(post);
-            await _context.SaveChangesAsync();
-
             return NoContent();
-        }
-
-        private bool PostExists(int id)
-        {
-            return _context.Posts.Any(e => e.Id == id);
         }
     }
 }

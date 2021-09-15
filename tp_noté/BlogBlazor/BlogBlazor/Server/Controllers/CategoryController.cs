@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BlogBlazor.Data;
 using BlogBlazor.Data.Model;
+using BlogBlazor.Data.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -15,25 +16,25 @@ namespace BlogBlazor.Server.Controllers
     [ApiController]
     public class CategoryController : ControllerBase
     {
-        private readonly MyContext _context;
+        private readonly CategoryRepository _categoryRepository;
 
-        public CategoryController(MyContext context)
+        public CategoryController(CategoryRepository categoryRepository)
         {
-            _context = context;
+            _categoryRepository = categoryRepository;
         }
 
         // GET: api/Category
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Category>>> GetCategories()
         {
-            return await _context.Categories.ToListAsync();
+            return Ok(await _categoryRepository.GetAll());
         }
 
         // GET: api/Category/5
         [HttpGet("{id:int}")]
         public async Task<ActionResult<Category>> GetCategory(int id)
         {
-            var category = await _context.Categories.FindAsync(id);
+            var category = await _categoryRepository.GetById(id);
 
             if (category == null)
             {
@@ -53,23 +54,7 @@ namespace BlogBlazor.Server.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(category).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CategoryExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            await _categoryRepository.Update(category);
 
             return NoContent();
         }
@@ -79,8 +64,7 @@ namespace BlogBlazor.Server.Controllers
         [HttpPost]
         public async Task<ActionResult<Category>> PostCategory(Category category)
         {
-            _context.Categories.Add(category);
-            await _context.SaveChangesAsync();
+            await _categoryRepository.Add(category);
 
             return CreatedAtAction("GetCategory", new { id = category.Id }, category);
         }
@@ -89,21 +73,12 @@ namespace BlogBlazor.Server.Controllers
         [HttpDelete("{id:int}")]
         public async Task<IActionResult> DeleteCategory(int id)
         {
-            var category = await _context.Categories.FindAsync(id);
-            if (category == null)
+            if (!await _categoryRepository.Delete(id))
             {
                 return NotFound();
             }
 
-            _context.Categories.Remove(category);
-            await _context.SaveChangesAsync();
-
             return NoContent();
-        }
-
-        private bool CategoryExists(int id)
-        {
-            return _context.Categories.Any(e => e.Id == id);
         }
     }
 }

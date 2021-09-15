@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BlogBlazor.Data;
 using BlogBlazor.Data.Model;
+using BlogBlazor.Data.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -15,25 +16,25 @@ namespace BlogBlazor.Server.Controllers
     [ApiController]
     public class AuthorController : ControllerBase
     {
-        private readonly MyContext _context;
+        private readonly IAuthorRepository _authorRepository;
 
-        public AuthorController(MyContext context)
+        public AuthorController(IAuthorRepository authorRepository)
         {
-            _context = context;
+            _authorRepository = authorRepository;
         }
 
         // GET: api/Author
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Author>>> GetAuthors()
         {
-            return await _context.Authors.ToListAsync();
+            return Ok(await _authorRepository.GetAll());
         }
 
         // GET: api/Author/5
         [HttpGet("{id:int}")]
         public async Task<ActionResult<Author>> GetAuthor(int id)
         {
-            var author = await _context.Authors.FindAsync(id);
+            var author = await _authorRepository.GetById(id);
 
             if (author == null)
             {
@@ -47,7 +48,7 @@ namespace BlogBlazor.Server.Controllers
         [HttpGet("{email}")]
         public async Task<ActionResult<Author>> GetAuthorByEmail(string email)
         {
-            var author = await _context.Authors.Where(a => a.Email.Equals(email)).FirstOrDefaultAsync();
+            var author = await _authorRepository.GetAuthorByEmail(email);
 
             if (author == null)
             {
@@ -67,23 +68,7 @@ namespace BlogBlazor.Server.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(author).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!AuthorExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            await _authorRepository.Update(author);
 
             return NoContent();
         }
@@ -93,8 +78,7 @@ namespace BlogBlazor.Server.Controllers
         [HttpPost]
         public async Task<ActionResult<Author>> PostAuthor(Author author)
         {
-            _context.Authors.Add(author);
-            await _context.SaveChangesAsync();
+            await _authorRepository.Add(author);
 
             return CreatedAtAction("GetAuthor", new { id = author.Id }, author);
         }
@@ -103,21 +87,13 @@ namespace BlogBlazor.Server.Controllers
         [HttpDelete("{id:int}")]
         public async Task<IActionResult> DeleteAuthor(int id)
         {
-            var author = await _context.Authors.FindAsync(id);
-            if (author == null)
+            if (!await _authorRepository.Delete(id))
             {
                 return NotFound();
             }
 
-            _context.Authors.Remove(author);
-            await _context.SaveChangesAsync();
-
             return NoContent();
         }
 
-        private bool AuthorExists(int id)
-        {
-            return _context.Authors.Any(e => e.Id == id);
-        }
     }
 }
