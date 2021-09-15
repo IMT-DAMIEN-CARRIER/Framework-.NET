@@ -1,15 +1,21 @@
-@page "/PostDatails"
+@page "/Post/Add"
 @using BlogBlazor.Client.Service
 @inject HttpClient Http
+@inject NavigationManager _navigationManager
 @inject AuthenticationService service
-<h3>PostDetails</h3>
+<h3>Ajouter une publication</h3>
 
-<EditForm>
+<EditForm Model="@_post" OnValidSubmit="HandleValidAddPost">
+    <DataAnnotationsValidator/>
+    <ValidationSummary/>
+    
     <InputText @bind-Value="@_post.Name" placeholder="Name"/>
     <InputText @bind-Value="@_post.Description" placeholder="Description"/>
     <InputDate @bind-Value="@_post.PublicationDate" placeholder="Date"/>
     <InputText @bind-Value="@_post.Content" placeholder="Content"/>
     <InputNumber @bind-Value="@_post.CategoryId" placeholder="Category Id"/>
+    
+    <button class="btn btn-primary" type="submit">Ajouter</button>
 </EditForm>
 
 @code {
@@ -25,5 +31,6 @@
     {
         _post.AuthorId = _author.Id;
         await Http.PostAsJsonAsync("api/post", _post);
+        _navigationManager.NavigateTo("/post");
     }
 }

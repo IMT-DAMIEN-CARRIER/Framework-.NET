@@ -27,13 +27,6 @@ namespace BlogBlazor.Server.Controllers
             _mapper = mapper;
         }
 
-        // GET: api/Author
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Author>>> GetAuthors()
-        {
-            return Ok(_mapper.Map<IEnumerable<AuthorReadDTO>>(await _authorRepository.GetAll()));
-        }
-
         // GET: api/Author/5
         [HttpGet("{id:int}")]
         public async Task<ActionResult<Author>> GetAuthor(int id)
@@ -48,8 +41,8 @@ namespace BlogBlazor.Server.Controllers
             return Ok(author);
         }
         
-        // GET: api/Author/author
-        [HttpGet("{author}")]
+        // POST: api/Author/Auth
+        [HttpPost("auth")]
         public async Task<ActionResult<AuthorReadDTO>> GetAuthorByLogin(AuthorLoginReadDTO author)
         {
             var data = _mapper.Map<AuthorReadDTO>(
@@ -63,48 +56,18 @@ namespace BlogBlazor.Server.Controllers
                 return NotFound();
             }
 
-            return Ok(data);
-        }
-
-        // PUT: api/Author/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id:int}")]
-        public async Task<IActionResult> PutAuthor(int id, AuthorWriteDTO author)
-        {
-            var data = _mapper.Map<Author>(author);
-            
-            if (id != data.Id)
-            {
-                return BadRequest();
-            }
-
-            await _authorRepository.Update(data);
-
-            return NoContent();
+            return CreatedAtAction("GetAuthor", new { id = data.Id }, _mapper.Map<AuthorReadDTO>(_mapper.Map<Author>(data)));
         }
 
         // POST: api/Author
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Author>> PostAuthor(AuthorWriteDTO author)
+        public async Task<ActionResult<Author>> PostAuthor(AuthorWriteDTO authorDto)
         {
-            var data = _mapper.Map<Author>(author);
-            await _authorRepository.Add(data);
+            var author = _mapper.Map<Author>(authorDto);
+            await _authorRepository.Add(author);
 
-            return CreatedAtAction("GetAuthor", new { id = data.Id }, data);
+            return CreatedAtAction("GetAuthor", new { id = author.Id }, _mapper.Map<AuthorReadDTO>(_mapper.Map<Author>(author)));
         }
-
-        // DELETE: api/Author/5
-        [HttpDelete("{id:int}")]
-        public async Task<IActionResult> DeleteAuthor(int id)
-        {
-            if (!await _authorRepository.Delete(id))
-            {
-                return NotFound();
-            }
-
-            return NoContent();
-        }
-
     }
 }

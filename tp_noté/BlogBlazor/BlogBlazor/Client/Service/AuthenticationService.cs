@@ -19,18 +19,22 @@ namespace BlogBlazor.Client.Service
 
         public async Task<AuthorReadDTO> Login(AuthorLoginReadDTO authorLoginReadDto)
         {
-            AuthorReadDTO author;
             try
             {
-                author = await _httpclient.GetFromJsonAsync<AuthorReadDTO>("api/author/" + authorLoginReadDto);
+                var response = await _httpclient.PostAsJsonAsync("api/author/auth", authorLoginReadDto);
                 
-                return author;
+                if (response.IsSuccessStatusCode)
+                {
+                    Author = await response.Content.ReadFromJsonAsync<AuthorReadDTO>();
+                }
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
                 throw new Exception("Author not found");
             }
+
+            return Author;
         }
     }
 }

@@ -2,53 +2,93 @@
 @inject HttpClient Http
 <h3>Nos publications</h3>
 
-@if (_categories != null)
+@if (_selectedPost != null)
 {
-    <EditForm Model="@_category" OnValidSubmit="HandleFilter">
+    <a href="/post/add">Ajout une publication</a>
+    <br/>
+    
+    <button class="btn btn-info" @onclick="OnResetPressHandle">Reset Page</button>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Publication date</th>
+            <th>Post name</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Author name</th>
+            <th>Content</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>@_selectedPost.PublicationDate</td>
+            <td>@_selectedPost.Name</td>
+            <td>@_selectedPost.Description</td>
+            <td>@_selectedPost.Category.Name</td>
+            <td>@_selectedPost.Author.ToString()</td>
+            <td>@_selectedPost.Content</td>
+        </tr>
+        </tbody>
+    </table>
+}
+
+@if (_posts != null && _selectedPost == null)
+{
+    <EditForm Model="@_filter" OnValidSubmit="HandleFilter">
         <DataAnnotationsValidator/>
         <ValidationSummary/>
         
         <label>Filtrer la recherche</label>
 
-        <InputSelect @bind-Value="@_category">
-            <option value="0"></option>
+        <InputSelect @bind-Value="@_filter">
+            <option value="Selectionnez une catégorie"></option>
             @foreach (var item in _categories)
             {
-                <option value="@item.Id">@item.Name</option>
+                <option value="@item.Name">@item.Name</option>
             }
         </InputSelect>
 
         <button class="btn btn-primary" type="submit">Filtrer</button>
-        <a href="/posts/add">Ajout une publication</a>
+        <button class="btn btn-primary" @onclick="OnResetFilter">Reset filter</button>
     </EditForm>
-}
-
-@if (_posts != null)
-{
+    <br/>
+    <table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Description (C)</th>
+        <th>Date (F)</th>
+        <th>Contenu</th>
+        <th>Catégorie</th>
+        <th>Autheur</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
     @foreach (var item in _posts)
     {
         if (@item.PublicationDate <= DateTime.Now)
         {
-            <div>
-                <p class="font-weight-bold">Name :</p> @item.Name
-                <p class="font-weight-bold">Description :</p> @item.Description
-                <p class="font-weight-bold">Date de création :</p> @item.PublicationDate
-                <p class="font-weight-bold">Contenu : </p> @item.Content
-                <p class="font-weight-bold">Catégorie : </p> @item.Category.Name
-                <p class="font-weight-bold">Auteur : </p> @item.Author.ToString()
-                <p class="font-weight-bold">Détails : </p> @item.Author.ToString()
-            </div>
-            <div>
-                <a href="/post/" + @item.Id>Détails</a>
-            </div>
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Description</td>
+                <td>@item.PublicationDate</td>
+                <td>@item.Content</td>
+                <td>@item.Category.Name</td>
+                <td>@item.Author.ToString()</td>
+                <td><button class="btn btn-" @onclick="@(e => OnDetailsHandler(e, item.Id))" >Détails</button></td>
+            </tr>
         }
     }
+    </tbody>
+    </table>
 }
 
 @code {
     private PostReadDTO[] _posts;
     private CategoryReadDTO[] _categories;
-    private CategoryReadDTO _category = new();
+    private PostReadDTO _selectedPost;
+    private string _filter = "";
 
     protected async override Task OnInitializedAsync()
     {
@@ -58,9 +98,32 @@
 
     protected async Task HandleFilter()
     {
-        if (_category != null)
+        if (_filter != null)
         {
-            _posts = await Http.GetFromJsonAsync<PostReadDTO[]>("api/post" + _category.Name);
+            _posts = await Http.GetFromJsonAsync<PostReadDTO[]>(String.Format("api/Post/{0}", _filter));
         }
+        StateHasChanged();
+    }
+
+    protected async void OnResetFilter()
+    {
+        _filter = "";
+        _categories = await Http.GetFromJsonAsync<CategoryReadDTO[]>("api/Category");
+        _posts = await Http.GetFromJsonAsync<PostReadDTO[]>("api/Post");
+        StateHasChanged();
+    }
+
+    protected async void OnDetailsHandler(MouseEventArgs e, int IdPost)
+    {
+        _selectedPost = await Http.GetFromJsonAsync<PostReadDTO>(String.Format("api/Post/{0}", IdPost));
+        StateHasChanged();
+    }
+
+    protected async void OnResetPressHandle()
+    {
+        _posts = await Http.GetFromJsonAsync<PostReadDTO[]>("api/post");
+        _categories = await Http.GetFromJsonAsync<CategoryReadDTO[]>("api/category");
+        _selectedPost = null;
+        StateHasChanged();
     }
 }

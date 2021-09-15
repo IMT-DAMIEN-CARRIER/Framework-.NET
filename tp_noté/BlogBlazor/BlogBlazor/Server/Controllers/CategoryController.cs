@@ -69,17 +69,5 @@ namespace BlogBlazor.Server.Controllers
 
             return CreatedAtAction("GetCategory", new { id = data.Id }, data);
         }
-
-        // DELETE: api/Category/5
-        [HttpDelete("{id:int}")]
-        public async Task<IActionResult> DeleteCategory(int id)
-        {
-            if (!await _categoryRepository.Delete(id))
-            {
-                return NotFound();
-            }
-
-            return NoContent();
-        }
     }
 }

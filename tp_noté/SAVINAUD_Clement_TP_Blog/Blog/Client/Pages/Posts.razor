@@ -1,0 +1,119 @@
+﻿@page "/post"
+@using Blog.Shared.DTO
+@using Blog.Client.Service
+@inject HttpClient Http
+@inject AuthenticationService AuthService
+@inject NavigationManager NavigationManager
+
+<h3>Posts</h3>
+
+@if (_selectedPost != null)
+{
+    <button class="btn" style="background-color: lightgrey;" @onclick="OnReturnPressHandle">Back</button>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Publication date</th>
+                <th>Post name</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Author name</th>
+                <th>Content</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@_selectedPost.Date</td>
+                <td>@_selectedPost.Name</td>
+                <td>@_selectedPost.Description</td>
+                <td>@_selectedPost.Category.Name</td>
+                <td>@_selectedPost.Author.FirstName</td>
+                <td>@_selectedPost.Content</td>
+            </tr>
+        </tbody>
+    </table>
+}
+@if (_posts != null && _selectedPost == null)
+{
+    <EditForm Model="_filterCategoryName" OnSubmit="@FilterPosts">
+        <InputSelect @bind-Value="_filterCategoryName">
+            @foreach (var Category in _categories)
+                {
+                <option value="@Category.Name">@Category.Name</option>
+                }
+        </InputSelect>
+        <button type="submit">Filter</button>
+    </EditForm>
+    <EditForm Model="_filterCategoryName" OnSubmit="@ResetFilter">
+        <button type="submit">Reset filter</button>
+    </EditForm>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Publication date</th>
+                <th>Post name</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Author name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (PostReadDTO post in _posts)
+            {
+                <tr>
+                    <td>@post.Date</td>
+                    <td>@post.Name</td>
+                    <td>@post.Description</td>
+                    <td>@post.Category.Name</td>
+                    <td>@post.Author.FirstName</td>
+                    <td><button class="btn" style="background-color: lightgrey;" @onclick="@(e => OnPostSelectHandler(e, post.Id))">See content</button></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private PostReadDTO[] _posts;
+    private CategoryReadDTO[] _categories;
+    private string _filterCategoryName = "";
+    private PostReadDTO _selectedPost;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (!AuthService.isConnected())
+        {
+            NavigationManager.NavigateTo("");
+        }
+        _categories = await Http.GetFromJsonAsync<CategoryReadDTO[]>("api/Category");
+        _posts = await Http.GetFromJsonAsync<PostReadDTO[]>("api/Post");
+    }
+
+    private async void FilterPosts()
+    {
+        _posts = await Http.GetFromJsonAsync<PostReadDTO[]>(String.Format("api/Post/filter/{0}", _filterCategoryName));
+        this.StateHasChanged();
+    }
+
+    private async void ResetFilter()
+    {
+        _filterCategoryName = "";
+        _categories = await Http.GetFromJsonAsync<CategoryReadDTO[]>("api/Category");
+        _posts = await Http.GetFromJsonAsync<PostReadDTO[]>("api/Post");
+        this.StateHasChanged();
+    }
+
+    private async void OnPostSelectHandler(MouseEventArgs e, Int64 IdPost)
+    {
+        _selectedPost = await Http.GetFromJsonAsync<PostReadDTO>(String.Format("api/Post/{0}", IdPost));
+        this.StateHasChanged();
+    }
+
+    private async void OnReturnPressHandle()
+    {
+        _categories = await Http.GetFromJsonAsync<CategoryReadDTO[]>("api/Category");
+        _posts = await Http.GetFromJsonAsync<PostReadDTO[]>("api/Post");
+        _selectedPost = null;
+        this.StateHasChanged();
+    }
+}

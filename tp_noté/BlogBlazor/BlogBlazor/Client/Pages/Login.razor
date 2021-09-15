@@ -10,7 +10,7 @@
     <ValidationSummary/>
 
     <InputText id="email" @bind-Value="@_authorLogin.Email" placeholder="Votre Email"/>
-    <InputText id="password" @bind-Value="@_authorLogin.Password" placeholder="Votre mot de passe"/>
+    <InputText id="password" @bind-Value="@_authorLogin.Password" placeholder="Votre mot de passe" type="password"/>
     <button class="btn btn-primary" type="submit">Connexion</button>
 </EditForm>
 
@@ -26,7 +26,7 @@
 
             if (_author != null)
             {
-                _navigationManager.NavigateTo("/posts");
+                _navigationManager.NavigateTo("/post");
             }
         }
         catch (Exception e)

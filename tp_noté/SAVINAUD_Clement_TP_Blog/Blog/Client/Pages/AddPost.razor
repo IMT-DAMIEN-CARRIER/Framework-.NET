@@ -1,0 +1,65 @@
+﻿@page "/createAuthor"
+@using Blog.Shared.DTO
+@using Blog.Client.Service
+@inject AuthenticationService AuthService
+@inject HttpClient Http;
+@inject NavigationManager NavigationManager
+
+<h3>AddPost</h3>
+
+@if (_postAdded)
+{
+    <p>A post have been added</p>
+} 
+@if (_categories != null)
+{
+    <EditForm Model="_postToCreate" OnSubmit="@AddPostAsync">
+        <DataAnnotationsValidator></DataAnnotationsValidator>
+        <ValidationSummary></ValidationSummary>
+        <text>Post name : </text>
+        <InputText @bind-Value="@_postToCreate.Name"></InputText>
+        <br />
+        <text>Description :  </text>
+        <InputText @bind-Value="@_postToCreate.Description"></InputText>
+        <br />
+        <text>Content : </text>
+        <InputTextArea @bind-Value="@_postToCreate.Content"></InputTextArea>
+        <text>Date : </text>
+        <InputDate @bind-Value="@_postToCreate.Date"></InputDate>
+        <br />
+        <text>Category :    </text>
+        <InputSelect @bind-Value="_postToCreate.CategoryId">
+            @foreach (var Category in _categories)
+                {
+                <option value="@Category.Id">@Category.Name</option>
+                }
+        </InputSelect>
+        <button type="submit">Create post</button>
+    </EditForm>
+}
+
+
+@code {
+
+    private PostWriteDTO _postToCreate = new();
+    private CategoryReadDTO[] _categories;
+    private bool _postAdded = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (!AuthService.isConnected())
+        {
+            NavigationManager.NavigateTo("");
+        }
+        _categories = await Http.GetFromJsonAsync<CategoryReadDTO[]>("api/Category");
+    }
+
+    private async void AddPostAsync()
+    {
+        _postToCreate.AuthorId = AuthService.LoggedAuthor.Id;
+        await Http.PostAsJsonAsync<PostWriteDTO>("api/Post", _postToCreate);
+        _postToCreate = new();
+        _postAdded = true;
+        this.StateHasChanged();
+    }
+}

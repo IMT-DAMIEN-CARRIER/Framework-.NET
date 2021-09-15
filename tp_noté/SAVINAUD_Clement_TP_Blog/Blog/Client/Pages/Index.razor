@@ -1,0 +1,93 @@
+﻿@page "/"
+@using Blog.Shared.DTO
+@using Blog.Client.Service
+@inject AuthenticationService AuthService
+@inject NavigationManager NavigationManager
+@inject HttpClient Http
+
+
+@if (_logFailed)
+{
+    <p>Login failed, please enter valid credentials</p>
+}
+@if (!_isLogged)
+{
+    <h4>Login</h4>
+    <EditForm Model="_currentAuthorLogins" OnSubmit="@TryAuthenticate">
+        <DataAnnotationsValidator></DataAnnotationsValidator>
+        <ValidationSummary></ValidationSummary>
+        <text>Email : </text>
+        <InputText @bind-Value="_currentAuthorLogins.Email"></InputText>
+        <text>Password : </text>
+        <InputText @bind-Value="_currentAuthorLogins.Password"></InputText>
+        <button type="submit">Login</button>
+    </EditForm>
+
+    <br />
+    <br />
+    <h4>Register</h4>
+    <EditForm Model="_registerAuthor" OnSubmit="@RegisterAuthor">
+        <DataAnnotationsValidator></DataAnnotationsValidator>
+        <ValidationSummary></ValidationSummary>
+        <text>FirstName : </text>
+        <InputText @bind-Value="_registerAuthor.FirstName"></InputText>
+        <text>LastName : </text>
+        <InputText @bind-Value="_registerAuthor.LastName"></InputText>
+        <text>Email : </text>
+        <InputText @bind-Value="_registerAuthor.Email"></InputText>
+        <text>Password : </text>
+        <InputText @bind-Value="_registerAuthor.Password"></InputText>
+        <button type="submit">Login</button>
+    </EditForm>
+}
+else
+{
+    <p>Logged</p>
+}
+
+@code {
+    private AuthorLoginDTO _currentAuthorLogins = new();
+    private AuthorWriteDTO _registerAuthor = new();
+    private AuthorReadDTO _loggedAuthor;
+    private bool _isLogged = false;
+    private bool _logFailed = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (AuthService.isConnected())
+        {
+            _isLogged = true;
+            NavigationManager.NavigateTo("post");
+        }
+    }
+
+    private async void TryAuthenticate()
+    {
+        try
+        {
+            _logFailed = false;
+            await AuthService.tryLogin(_currentAuthorLogins);
+            if (AuthService.isConnected())
+            {
+                _isLogged = true;
+                NavigationManager.NavigateTo("post");
+            }
+        }
+        catch
+        {
+            _isLogged = false;
+            _logFailed = true;
+            this.StateHasChanged();
+        }
+
+        this.StateHasChanged();
+    }
+
+    private async void RegisterAuthor()
+    {
+        await Http.PostAsJsonAsync<AuthorWriteDTO>("api/Author", _registerAuthor);
+        _currentAuthorLogins.Email = _registerAuthor.Email;
+        _currentAuthorLogins.Password = _registerAuthor.Password;
+        TryAuthenticate();
+    }
+}
