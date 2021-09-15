@@ -1,0 +1,12 @@
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Shared/bin/Debug/net5.0/BlogBlazor.Shared.deps.json
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Shared/bin/Debug/net5.0/BlogBlazor.Shared.dll
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Shared/bin/Debug/net5.0/ref/BlogBlazor.Shared.dll
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Shared/bin/Debug/net5.0/BlogBlazor.Shared.pdb
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Shared/obj/Debug/net5.0/BlogBlazor.Shared.csproj.AssemblyReference.cache
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Shared/obj/Debug/net5.0/BlogBlazor.Shared.GeneratedMSBuildEditorConfig.editorconfig
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Shared/obj/Debug/net5.0/BlogBlazor.Shared.AssemblyInfoInputs.cache
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Shared/obj/Debug/net5.0/BlogBlazor.Shared.AssemblyInfo.cs
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Shared/obj/Debug/net5.0/BlogBlazor.Shared.csproj.CoreCompileInputs.cache
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Shared/obj/Debug/net5.0/BlogBlazor.Shared.dll
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Shared/obj/Debug/net5.0/ref/BlogBlazor.Shared.dll
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Shared/obj/Debug/net5.0/BlogBlazor.Shared.pdb

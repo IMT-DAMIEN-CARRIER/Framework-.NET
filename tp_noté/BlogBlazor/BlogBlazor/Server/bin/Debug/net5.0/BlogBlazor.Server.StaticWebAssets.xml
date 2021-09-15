@@ -1,0 +1,5 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="/" Path="/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/bin/Debug/net5.0/wwwroot/" />
+  <ContentRoot BasePath="/" Path="/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/obj/Debug/net5.0/scopedcss/bundle/" />
+  <ContentRoot BasePath="/" Path="/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/wwwroot/" />
+</StaticWebAssets>

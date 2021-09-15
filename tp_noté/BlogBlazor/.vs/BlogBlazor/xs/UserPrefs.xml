@@ -1,6 +1,22 @@
 ﻿<Properties StartupConfiguration="{94D40EE2-6AC2-48E5-870D-F51E8AB695EE}|Default">
-  <MonoDevelop.Ide.ItemProperties.BlogBlazor.Server FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.BlogBlazor.Server FirstBuild="True" PreferredExecutionTarget="/Applications/Opera.app" />
   <MonoDevelop.Ide.ItemProperties.BlogBlazor.Client FirstBuild="True" />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="BlogBlazor" expanded="True">
+            <Node name="BlogBlazor.Server" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.BlogBlazor.Shared FirstBuild="True" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

@@ -70,13 +70,20 @@ using Microsoft.JSInterop;
 #nullable disable
 #nullable restore
 #line 9 "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/_Imports.razor"
-using BlogBlazor.Client;
+using BlogBlazor.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 10 "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/_Imports.razor"
+using BlogBlazor.Client;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 11 "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/_Imports.razor"
 using BlogBlazor.Client.Shared;
 
 #line default
@@ -90,7 +97,7 @@ using BlogBlazor.Client.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 28 "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/Shared/NavMenu.razor"
+#line 18 "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/Shared/NavMenu.razor"
        
     private bool collapseNavMenu = true;
 
