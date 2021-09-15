@@ -10,6 +10,7 @@ namespace BlogBlazor.Server.Profiles
         {
             CreateMap<Author, AuthorReadDTO>().ReverseMap();
             CreateMap<Author, AuthorWriteDTO>().ReverseMap();
+            CreateMap<Author, AuthorLoginReadDTO>().ReverseMap();
         }
     }
 }

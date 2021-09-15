@@ -48,18 +48,22 @@ namespace BlogBlazor.Server.Controllers
             return Ok(author);
         }
         
-        // GET: api/Author/email/password
-        [HttpGet("{email, password}")]
-        public async Task<ActionResult<Author>> GetAuthorByLogin(string email, string password)
+        // GET: api/Author/author
+        [HttpGet("{author}")]
+        public async Task<ActionResult<AuthorReadDTO>> GetAuthorByLogin(AuthorLoginReadDTO author)
         {
-            var author = _mapper.Map<AuthorReadDTO>(await _authorRepository.GetAuthorByEmail(email, password));
+            var data = _mapper.Map<AuthorReadDTO>(
+                await _authorRepository.GetAuthorByEmail(
+                    author.Email, author.Password
+                    )
+                );
 
-            if (author == null)
+            if (data == null)
             {
                 return NotFound();
             }
 
-            return Ok(author);
+            return Ok(data);
         }
 
         // PUT: api/Author/5

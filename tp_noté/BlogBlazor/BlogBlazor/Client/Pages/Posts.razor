@@ -4,18 +4,20 @@
 
 @if (_categories != null)
 {
-    <EditForm>
+    <EditForm Model="@_category" OnValidSubmit="HandleFilter">
+        <ValidationSummary/>
         <label>Filtrer la recherche</label>
-        
-        <InputSelect @bind-Value="_category">
+
+        <InputSelect @bind-Value="@_category">
             <option value="0"></option>
             @foreach (var item in _categories)
             {
                 <option value="@item.Id">@item.Name</option>
             }
         </InputSelect>
-        
-        <button class="btn btn-primary" @onclick="HandleFilter" type="submit">Filtrer</button>
+
+        <button class="btn btn-primary" type="submit">Filtrer</button>
+        <a href="/posts/add">Ajout une publication</a>
     </EditForm>
 }
 else
@@ -39,12 +41,18 @@ else
         {
             if (@item.PublicationDate <= DateTime.Now)
             {
-                <div><p class="font-weight-bold">Name :</p> @item.Name</div>
-                <div><p class="font-weight-bold">Description :</p> @item.Description</div>
-                <div><p class="font-weight-bold">Date de création :</p> @item.PublicationDate</div>
-                <div><p class="font-weight-bold">Contenu : </p> @item.Content</div>
-                <div><p class="font-weight-bold">Catégorie :  </p> @item.Category.Name</div>
-                <div><p class="font-weight-bold">Auteur : </p> @item.Author.ToString()</div>
+                <div>
+                    <p class="font-weight-bold">Name :</p> @item.Name
+                    <p class="font-weight-bold">Description :</p> @item.Description
+                    <p class="font-weight-bold">Date de création :</p> @item.PublicationDate
+                    <p class="font-weight-bold">Contenu : </p> @item.Content
+                    <p class="font-weight-bold">Catégorie : </p> @item.Category.Name
+                    <p class="font-weight-bold">Auteur : </p> @item.Author.ToString()
+                    <p class="font-weight-bold">Détails : </p> @item.Author.ToString()
+                </div>
+                <div>
+                    <a href="/post/" + @item.Id>Détails</a>
+                </div>
             }
         }
     }
@@ -53,7 +61,7 @@ else
 @code {
     private List<PostReadDTO> _posts;
     private List<CategoryReadDTO> _categories;
-    CategoryReadDTO _category;
+    private CategoryReadDTO _category = new();
 
     protected async override Task OnInitializedAsync()
     {

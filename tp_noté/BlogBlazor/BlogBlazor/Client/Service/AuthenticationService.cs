@@ -9,6 +9,7 @@ namespace BlogBlazor.Client.Service
     public class AuthenticationService
     {
         private readonly HttpClient _httpclient;
+        
         public AuthorReadDTO Author { get; set; }
 
         public AuthenticationService(HttpClient Httpclient)
@@ -16,12 +17,13 @@ namespace BlogBlazor.Client.Service
             _httpclient = Httpclient;
         }
 
-        public async Task<AuthorReadDTO> Login(string email)
+        public async Task<AuthorReadDTO> Login(AuthorLoginReadDTO authorLoginReadDto)
         {
             AuthorReadDTO author;
             try
             {
-                author = await _httpclient.GetFromJsonAsync<AuthorReadDTO>("api/author/" + email);
+                author = await _httpclient.GetFromJsonAsync<AuthorReadDTO>("api/author/" + authorLoginReadDto);
+                
                 return author;
             }
             catch (Exception e)

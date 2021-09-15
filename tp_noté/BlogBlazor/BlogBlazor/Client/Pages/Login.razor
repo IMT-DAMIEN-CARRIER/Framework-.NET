@@ -5,24 +5,24 @@
 @inject AuthenticationService _authenticationService
 <h3>Login</h3>
 
-<EditForm OnValidSubmit="HandleValidLogin">
+<EditForm OnValidSubmit="HandleValidLogin" Model="@_authorLogin">
+    <DataAnnotationsValidator/>
     <ValidationSummary/>
-    
-    <InputText id="email" @bind-value="_email" placeholder="Votre Email" />
-    <InputText id="password" @bind-value="_password" placeholder="Votre mot de passe" />
-    <button type="submit">Connexion</button>
+
+    <InputText id="email" @bind-value="@_authorLogin.Email" placeholder="Votre Email"/>
+    <InputText id="password" @bind-value="@_authorLogin.Password" placeholder="Votre mot de passe"/>
+    <button class="btn btn-primary"  type="submit">Connexion</button>
 </EditForm>
 
 @code {
-    private AuthorReadDTO author;
-    private string _email;
-    private string _password;
+    private AuthorLoginReadDTO _authorLogin = new();
+    private AuthorReadDTO _author = new();
 
     protected async Task HandleValidLogin()
     {
-        author = await _authenticationService.Login(_email);
+        _author = await _authenticationService.Login(_authorLogin);
 
-        if (author != null)
+        if (_author != null)
         {
             _navigationManager.NavigateTo("/posts");
         }

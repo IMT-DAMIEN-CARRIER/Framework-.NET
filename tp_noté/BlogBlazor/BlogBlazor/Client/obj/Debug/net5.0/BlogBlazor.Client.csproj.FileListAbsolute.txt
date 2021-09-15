@@ -640,3 +640,5 @@
 /Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/obj/Debug/net5.0/build-gz/zvH1iVOM.gz
 /Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/obj/Debug/net5.0/build-gz/cJghQYJr.gz
 /Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/obj/Debug/net5.0/build-gz/+qo+zdqi.gz
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/obj/Debug/net5.0/RazorDeclaration/Pages/PostDetails.razor.g.cs
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/obj/Debug/net5.0/Razor/Pages/PostDetails.razor.g.cs

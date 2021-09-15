@@ -112,11 +112,11 @@ using BlogBlazor.Client.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 53 "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/Pages/Posts.razor"
+#line 61 "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/Pages/Posts.razor"
        
     private List<PostReadDTO> _posts;
     private List<CategoryReadDTO> _categories;
-    CategoryReadDTO _category;
+    private CategoryReadDTO _category = new();
 
     protected async override Task OnInitializedAsync()
     {

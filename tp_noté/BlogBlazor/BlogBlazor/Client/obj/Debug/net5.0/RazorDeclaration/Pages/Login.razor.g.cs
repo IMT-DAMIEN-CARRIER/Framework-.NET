@@ -119,17 +119,16 @@ using BlogBlazor.Client.Service;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 16 "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/Pages/Login.razor"
+#line 17 "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/Pages/Login.razor"
        
-    private AuthorReadDTO author;
-    private string _email;
-    private string _password;
+    private AuthorLoginReadDTO _authorLogin = new();
+    private AuthorReadDTO _author = new();
 
     protected async Task HandleValidLogin()
     {
-        author = await _authenticationService.Login(_email);
+        _author = await _authenticationService.Login(_authorLogin);
 
-        if (author != null)
+        if (_author != null)
         {
             _navigationManager.NavigateTo("/posts");
         }
