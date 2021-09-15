@@ -116,6 +116,7 @@ using BlogBlazor.Client.Shared;
        
     private List<PostReadDTO> posts;
     private List<CategoryReadDTO> categories;
+    EnvironmentVariableTarget category;
 
     protected async override Task OnInitializedAsync()
     {
@@ -125,7 +126,6 @@ using BlogBlazor.Client.Shared;
 
     protected async Task HandleFilter()
     {
-        var category = 
     }
 
 #line default

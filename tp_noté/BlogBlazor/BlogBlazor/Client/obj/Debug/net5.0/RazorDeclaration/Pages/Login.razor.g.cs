@@ -103,6 +103,13 @@ using BlogBlazor.Client.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/Pages/Login.razor"
+using BlogBlazor.Client.Service;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/Login")]
     public partial class Login : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -112,18 +119,38 @@ using BlogBlazor.Client.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 10 "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/Pages/Login.razor"
+#line 16 "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/Pages/Login.razor"
        
     private AuthorReadDTO author;
+    private string _email;
+    private string _password;
 
-    protected async Task HandleValidLogin(string email)
+    protected async Task HandleValidLogin()
     {
-        author = await Http.GetFromJsonAsync<AuthorReadDTO>("api/author/" + email);
+        author = await _authenticationService.Login(_email);
+
+        if (author != null)
+        {
+            _navigationManager.NavigateTo("/posts");
+        }
+        else
+        {
+
+#line default
+#line hidden
+#nullable disable
+        __builder.AddContent(0, "            ");
+        __builder.AddMarkupContent(1, "<div>Login ou mot de passe incorrecte.</div>\n");
+#nullable restore
+#line 32 "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/Pages/Login.razor"
+        }
     }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private AuthenticationService _authenticationService { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager _navigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient Http { get; set; }
     }
 }
