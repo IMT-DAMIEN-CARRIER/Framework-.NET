@@ -35,6 +35,7 @@
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.1",
           "BlogBlazor.Client": "1.0.0",
+          "BlogBlazor.Data": "1.0.0",
           "BlogBlazor.Shared": "1.0.0",
           "Microsoft.AspNetCore.Components.WebAssembly.Server": "5.0.9",
           "Microsoft.EntityFrameworkCore": "5.0.10",
@@ -2254,6 +2255,14 @@
         },
         "compile": {
           "BlogBlazor.Client.dll": {}
+        }
+      },
+      "BlogBlazor.Data/1.0.0": {
+        "runtime": {
+          "BlogBlazor.Data.dll": {}
+        },
+        "compile": {
+          "BlogBlazor.Data.dll": {}
         }
       },
       "BlogBlazor.Shared/1.0.0": {
@@ -5037,6 +5046,11 @@
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
     "BlogBlazor.Client/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BlogBlazor.Data/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

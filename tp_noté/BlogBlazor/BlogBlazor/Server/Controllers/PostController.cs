@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BlogBlazor.Data.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -42,7 +43,7 @@ namespace BlogBlazor.Server.Controllers
             return post;
         }
 
-        //GET : api/Post/Category/categoryName
+        //GET : api/Post/categoryName
         [HttpGet("{categoryName}")]
         public async Task<ActionResult<IEnumerable<Post>>> GetPostByCategory(string categoryName)
         {

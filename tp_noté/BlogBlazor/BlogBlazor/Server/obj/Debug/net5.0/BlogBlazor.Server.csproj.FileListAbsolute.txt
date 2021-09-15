@@ -190,3 +190,5 @@
 /Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Server/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Server/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerUI.dll
 /Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Server/obj/Debug/net5.0/BlogBlazor.Server.MvcApplicationPartsAssemblyInfo.cs
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Server/bin/Debug/net5.0/BlogBlazor.Data.dll
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Server/bin/Debug/net5.0/BlogBlazor.Data.pdb

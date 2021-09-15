@@ -2512,6 +2512,16 @@
           "bin/placeholder/BlogBlazor.Client.dll": {}
         }
       },
+      "BlogBlazor.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/BlogBlazor.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BlogBlazor.Data.dll": {}
+        }
+      },
       "BlogBlazor.Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -8340,6 +8350,11 @@
       "path": "../Client/BlogBlazor.Client.csproj",
       "msbuildProject": "../Client/BlogBlazor.Client.csproj"
     },
+    "BlogBlazor.Data/1.0.0": {
+      "type": "project",
+      "path": "../../BlogBlazor.Data/BlogBlazor.Data.csproj",
+      "msbuildProject": "../../BlogBlazor.Data/BlogBlazor.Data.csproj"
+    },
     "BlogBlazor.Shared/1.0.0": {
       "type": "project",
       "path": "../Shared/BlogBlazor.Shared.csproj",
@@ -8350,6 +8365,7 @@
     "net5.0": [
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 8.1.1",
       "BlogBlazor.Client >= 1.0.0",
+      "BlogBlazor.Data >= 1.0.0",
       "BlogBlazor.Shared >= 1.0.0",
       "Microsoft.AspNetCore.Components.WebAssembly.Server >= 5.0.9",
       "Microsoft.EntityFrameworkCore >= 5.0.10",
@@ -8387,6 +8403,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor.Data/BlogBlazor.Data.csproj": {
+              "projectPath": "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor.Data/BlogBlazor.Data.csproj"
+            },
             "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/BlogBlazor.Client.csproj": {
               "projectPath": "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/BlogBlazor.Client.csproj"
             },

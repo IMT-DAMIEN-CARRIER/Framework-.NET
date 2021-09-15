@@ -1,3 +1,4 @@
+using BlogBlazor.Data.Model;
 using BlogBlazor.Shared.Model;
 using Microsoft.EntityFrameworkCore;
 

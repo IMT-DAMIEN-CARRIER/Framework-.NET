@@ -70,7 +70,7 @@ using Microsoft.JSInterop;
 #nullable disable
 #nullable restore
 #line 9 "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/_Imports.razor"
-using BlogBlazor.Shared.Model;
+using BlogBlazor.Shared.Model.Author;
 
 #line default
 #line hidden
@@ -100,7 +100,7 @@ using BlogBlazor.Client.Shared;
 #nullable restore
 #line 18 "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/Pages/Register.razor"
        
-    private Author _author = new();
+    private AuthorWriteDTO _author = new();
     
     protected async Task HandleValidRegistration()
     {

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
-namespace BlogBlazor.Shared.Model
+namespace BlogBlazor.Data.Model
 {
     public class Category
     {

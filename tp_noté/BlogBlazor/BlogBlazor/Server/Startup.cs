@@ -30,6 +30,7 @@ namespace BlogBlazor.Server
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddControllers();
+            services.AddAutoMapper(typeof(Startup));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo() { Title = "BlogBlazerAPI", Version = "v1" });
