@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlogBlazor.Server.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20210915080715_init")]
+    [Migration("20210915081249_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

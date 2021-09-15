@@ -25,7 +25,7 @@ namespace BlogBlazor.Server
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAutoMapper(typeof(Startup));
-            services.AddDbContext<MyContext>(options => options.UseSqlite("Data Source=pizza.db"));
+            services.AddDbContext<MyContext>(options => options.UseSqlite("Data Source=blog.db"));
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
