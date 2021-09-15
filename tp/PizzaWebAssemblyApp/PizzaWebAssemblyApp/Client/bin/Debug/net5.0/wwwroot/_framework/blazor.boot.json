@@ -196,12 +196,12 @@
       "netstandard.dll": "sha256-yOOty6BTX3e57YAEHK5a4nku\/lj0vi7jg\/eQZAjbDQk=",
       "System.Private.CoreLib.dll": "sha256-rraBQp6NevIQiELPVfDFDl5pv9QVJqCiZhB5bkpiZ88=",
       "PizzaWebAssemblyApp.Shared.dll": "sha256-KOUeEHwKy3qaayoW0WtWXBcQBgk4xyX+hRbsj9ScH3c=",
-      "PizzaWebAssemblyApp.Client.dll": "sha256-UvVV3ywKOgrLGPKhiJW6W5UMpuCSCM3bvUBl\/oXmKOA="
+      "PizzaWebAssemblyApp.Client.dll": "sha256-na4C1f+xtI305MQZkHCzbUYARwFM0ACIbbPbttcNQfc="
     },
     "lazyAssembly": null,
     "pdb": {
       "PizzaWebAssemblyApp.Shared.pdb": "sha256-0n4L\/fHqgaK7RhPVjjmvP5P4HXNjaf1c7uSZTIEZHio=",
-      "PizzaWebAssemblyApp.Client.pdb": "sha256-zTCPUQaTCv\/e\/mWCqs0X9F1i9USHFI9sl8ksur26Iu4="
+      "PizzaWebAssemblyApp.Client.pdb": "sha256-tlCxEEI+h7VE6t7zLzxayKOUeZks3EhmYZyPw31m6Ps="
     },
     "runtime": {
       "dotnet.timezones.blat": "sha256-L2vkcKzmXJtf+J7db5TbDMBckrgqJ5qc0ZzVIdRlm0I=",

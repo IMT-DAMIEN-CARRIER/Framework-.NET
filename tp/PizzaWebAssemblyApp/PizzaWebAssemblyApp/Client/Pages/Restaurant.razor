@@ -4,6 +4,7 @@
 <h1>Restaurant</h1>
 
 <p>Ajoutez vos restaurants</p>
+<a class="btn btn-primary" href="/restaurants/add">Ajouter une restaurant</a>
 
 @if (restaurants == null)
 {
@@ -11,6 +12,7 @@
     }
     else
     {
+        <p>Vos restaurants</p>
         <table class="table">
             <thead>
                 <tr>
@@ -29,10 +31,10 @@
 }
 
 @code {
-    private Restaurant[] restaurants;
+    private PizzaWebAssemblyApp.Shared.Restaurant[] restaurants;
 
     protected override async Task OnInitializedAsync()
     {
-        restaurants = await Http.GetFromJsonAsync<Restaurant[]>("Restaurant");
+        restaurants = await Http.GetFromJsonAsync<PizzaWebAssemblyApp.Shared.Restaurant[]>("Restaurant");
     }
 }

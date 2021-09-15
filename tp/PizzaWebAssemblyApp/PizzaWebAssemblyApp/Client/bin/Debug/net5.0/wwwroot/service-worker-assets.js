@@ -1,7 +1,7 @@
 ﻿self.assetsManifest = {
   "assets": [
     {
-      "hash": "sha256-CiecgNymgc91Rs9A9N0tBC0M0ChtG0KQaUZNoKhBJ8I=",
+      "hash": "sha256-77+JnoFrrvvD9aG3MHqEKVm0oj71RCkF\/B59klPealk=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -793,11 +793,11 @@
       "url": "_framework\/PizzaWebAssemblyApp.Shared.pdb"
     },
     {
-      "hash": "sha256-UvVV3ywKOgrLGPKhiJW6W5UMpuCSCM3bvUBl\/oXmKOA=",
+      "hash": "sha256-na4C1f+xtI305MQZkHCzbUYARwFM0ACIbbPbttcNQfc=",
       "url": "_framework\/PizzaWebAssemblyApp.Client.dll"
     },
     {
-      "hash": "sha256-zTCPUQaTCv\/e\/mWCqs0X9F1i9USHFI9sl8ksur26Iu4=",
+      "hash": "sha256-tlCxEEI+h7VE6t7zLzxayKOUeZks3EhmYZyPw31m6Ps=",
       "url": "_framework\/PizzaWebAssemblyApp.Client.pdb"
     },
     {
@@ -1661,5 +1661,5 @@
       "url": "PizzaWebAssemblyApp.Client.bundle.scp.css"
     }
   ],
-  "version": "XbHBbV6S"
+  "version": "Suu2A+qQ"
 };

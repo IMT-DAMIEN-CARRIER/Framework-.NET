@@ -640,3 +640,5 @@
 /Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Client/obj/Debug/net5.0/service-worker-assets.js
 /Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Client/obj/Debug/net5.0/RazorDeclaration/Pages/Restaurant.razor.g.cs
 /Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Client/obj/Debug/net5.0/Razor/Pages/Restaurant.razor.g.cs
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Client/obj/Debug/net5.0/RazorDeclaration/Pages/AddRestaurant.razor.g.cs
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Client/obj/Debug/net5.0/Razor/Pages/AddRestaurant.razor.g.cs

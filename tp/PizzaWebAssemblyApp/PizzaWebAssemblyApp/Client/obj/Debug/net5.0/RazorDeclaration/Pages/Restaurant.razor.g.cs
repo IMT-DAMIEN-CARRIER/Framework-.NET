@@ -98,13 +98,13 @@ using PizzaWebAssemblyApp.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 31 "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Client/Pages/Restaurant.razor"
+#line 33 "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Client/Pages/Restaurant.razor"
        
-    private Restaurant[] restaurants;
+    private PizzaWebAssemblyApp.Shared.Restaurant[] restaurants;
 
     protected override async Task OnInitializedAsync()
     {
-        restaurants = await Http.GetFromJsonAsync<Restaurant[]>("Restaurant");
+        restaurants = await Http.GetFromJsonAsync<PizzaWebAssemblyApp.Shared.Restaurant[]>("Restaurant");
     }
 
 #line default

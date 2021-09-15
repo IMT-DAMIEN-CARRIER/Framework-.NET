@@ -1,0 +1,21 @@
+@page "/restaurants/add"
+@inject HttpClient Http
+<h3>AddRestaurant</h3>
+
+<EditForm Model="@_restaurant" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator/>
+    <ValidationSummary/>
+    
+    <InputText id="name" @bind-Value="@_restaurant.Name"/>
+    
+    <button type="submit">Valider</button>
+</EditForm>
+
+@code {
+    private PizzaWebAssemblyApp.Shared.Restaurant _restaurant = new();
+
+    protected async Task HandleValidSubmit()
+    {
+        await Http.PostAsJsonAsync("api/restaurant", _restaurant);
+    }
+}

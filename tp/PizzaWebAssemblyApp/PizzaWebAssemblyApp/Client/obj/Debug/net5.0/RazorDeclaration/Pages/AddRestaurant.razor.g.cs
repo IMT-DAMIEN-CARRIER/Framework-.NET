@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace PizzaWebAssemblyApp.Client.Shared
+namespace PizzaWebAssemblyApp.Client.Pages
 {
     #line hidden
     using System;
@@ -89,7 +89,8 @@ using PizzaWebAssemblyApp.Shared;
 #line default
 #line hidden
 #nullable disable
-    public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/restaurants/add")]
+    public partial class AddRestaurant : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -97,20 +98,19 @@ using PizzaWebAssemblyApp.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 33 "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Client/Shared/NavMenu.razor"
+#line 14 "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp/PizzaWebAssemblyApp/PizzaWebAssemblyApp/Client/Pages/AddRestaurant.razor"
        
-    private bool collapseNavMenu = true;
+    private PizzaWebAssemblyApp.Shared.Restaurant _restaurant = new();
 
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
+    protected async Task HandleValidSubmit()
     {
-        collapseNavMenu = !collapseNavMenu;
+        await Http.PostAsJsonAsync("api/restaurant", _restaurant);
     }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient Http { get; set; }
     }
 }
 #pragma warning restore 1591
