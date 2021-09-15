@@ -1,7 +1,7 @@
 ﻿self.assetsManifest = {
   "assets": [
     {
-      "hash": "sha256-oK4+OCE9lf2w6fqOpgg5aAUqcWfmWNl46uIJfJXAUGY=",
+      "hash": "sha256-Zqcregw4ZK\/E1qld0yMkWX4Ucr9sGD2Lna0FuskMFQM=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -793,11 +793,11 @@
       "url": "_framework\/BlogBlazor.Shared.pdb"
     },
     {
-      "hash": "sha256-3osmpENoq09scHzTLWHAmiY7zX7JcOF+Fvizwptx5uc=",
+      "hash": "sha256-l2zl+BjWcuTIZK+HbAxbEg05lnaxaDzUjKWw9whGzM4=",
       "url": "_framework\/BlogBlazor.Client.dll"
     },
     {
-      "hash": "sha256-L9nJHESF7zZuHKaXmsa3GLuPH+yvlvHP6XIXct7izNs=",
+      "hash": "sha256-8AinO3NlqDFtMlVJR5CL5uSq+fojXYC7epfhvNRol70=",
       "url": "_framework\/BlogBlazor.Client.pdb"
     },
     {
@@ -1661,5 +1661,5 @@
       "url": "BlogBlazor.Client.bundle.scp.css"
     }
   ],
-  "version": "+v8eolXN"
+  "version": "J0PVRTpi"
 };
