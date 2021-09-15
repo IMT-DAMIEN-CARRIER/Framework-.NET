@@ -1,5 +1,6 @@
 @page "/Register"
 @inject HttpClient Http
+@inject NavigationManager _navigationManager
 <h1>Inscription</h1>
 
 <EditForm Model="@_author" OnValidSubmit="HandleValidRegistration">
@@ -19,6 +20,11 @@
     
     protected async Task HandleValidRegistration()
     {
-        await Http.PostAsJsonAsync("api/author", _author);
+        var author = await Http.PostAsJsonAsync("api/author", _author);
+        
+        if (author != null)
+        {
+            _navigationManager.NavigateTo("/login");
+        }
     }
 }
