@@ -67,7 +67,7 @@ using Microsoft.JSInterop;
 #nullable disable
 #nullable restore
 #line 9 "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/_Imports.razor"
-using BlogBlazor.Shared;
+using BlogBlazor.Shared.Model;
 
 #line default
 #line hidden

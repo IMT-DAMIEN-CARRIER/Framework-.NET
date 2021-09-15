@@ -1,0 +1,25 @@
+@page "/Register"
+@inject HttpClient Http
+<h1>Inscription</h1>
+
+<EditForm Model="@_author" OnValidSubmit="HandleValidRegistration">
+    <DataAnnotationsValidator/>
+    <ValidationSummary/>
+    
+    <InputText id="firstname" @bind-Value="@_author.Firstname" placeholder="Entrer votre prénom"/>
+    <InputText id="lastname" @bind-Value="@_author.Lastname" placeholder="Entrer votre nom"/>
+    <InputText id="email" @bind-Value="@_author.Email" placeholder="Entrer votre email"/>
+    <InputText id="password" type="password" @bind-Value="@_author.Email" placeholder="Mot de passe"/>
+    
+    
+    <button type="submit">Valider</button>
+</EditForm>
+
+@code {
+    private Author _author = new();
+    
+    protected async Task HandleValidRegistration()
+    {
+        await Http.PostAsJsonAsync("api/author", _author);
+    }
+}
