@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using System.Linq;
 using BlogBlazor.Server.Model;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 
 namespace BlogBlazor.Server
 {
@@ -28,6 +29,11 @@ namespace BlogBlazor.Server
             services.AddDbContext<MyContext>(options => options.UseSqlite("Data Source=blog.db"));
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddControllers();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo() { Title = "BlogBlazerAPI", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,6 +42,8 @@ namespace BlogBlazor.Server
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "BlogBlazerAPI v1"));
                 app.UseWebAssemblyDebugging();
             }
             else
