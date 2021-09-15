@@ -27,6 +27,7 @@ namespace PizzaWebAssemblyApp.Server
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddAutoMapper(typeof(Startup));
             services.AddDbContext<MyContext>(options => options.UseSqlite("Data Source=pizza.db"));
         }
 
