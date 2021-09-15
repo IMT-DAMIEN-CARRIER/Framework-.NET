@@ -1,15 +1,9 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
-using BlogBlazor.Data;
 using BlogBlazor.Data.Model;
 using BlogBlazor.Data.Repository;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using BlogBlazor.Shared.Model;
 using BlogBlazor.Shared.Model.Category;
 
 namespace BlogBlazor.Server.Controllers
@@ -18,10 +12,10 @@ namespace BlogBlazor.Server.Controllers
     [ApiController]
     public class CategoryController : ControllerBase
     {
-        private readonly CategoryRepository _categoryRepository;
+        private readonly ICategoryRepository _categoryRepository;
         private readonly IMapper _mapper;
 
-        public CategoryController(CategoryRepository categoryRepository, IMapper mapper)
+        public CategoryController(ICategoryRepository categoryRepository, IMapper mapper)
         {
             _categoryRepository = categoryRepository;
             _mapper = mapper;
@@ -31,9 +25,7 @@ namespace BlogBlazor.Server.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Category>>> GetCategories()
         {
-            var data = _mapper.Map<IEnumerable<CategoryReadDTO>>(await _categoryRepository.GetAll());
-            
-            return Ok(data);
+            return Ok(_mapper.Map<IEnumerable<CategoryReadDTO>>(await _categoryRepository.GetAll()));
         }
 
         // GET: api/Category/5

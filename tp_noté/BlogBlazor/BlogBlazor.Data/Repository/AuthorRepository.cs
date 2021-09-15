@@ -11,9 +11,11 @@ namespace BlogBlazor.Data.Repository
         {
         }
 
-        public async Task<Author> GetAuthorByEmail(string email)
+        public async Task<Author> GetAuthorByEmail(string email, string password)
         {
-            return await Context.Authors.Where(a => a.Email.Equals(email)).FirstOrDefaultAsync();
+            return await Context.Authors
+                .Where(a => a.Email.Equals(email) && a.Password.Equals(password))
+                .FirstOrDefaultAsync();
         }
     }
 }

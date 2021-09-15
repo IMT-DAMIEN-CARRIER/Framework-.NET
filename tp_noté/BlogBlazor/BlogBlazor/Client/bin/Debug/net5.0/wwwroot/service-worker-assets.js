@@ -1,7 +1,7 @@
 ﻿self.assetsManifest = {
   "assets": [
     {
-      "hash": "sha256-KIkExfjHBgXOSgcIui9TLo0O1QFd2mX8vRiTfkfWcsI=",
+      "hash": "sha256-Euh7+emfQvMF9NzPwfgzkj5kyGX6abTHfm287eWK99o=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -785,19 +785,19 @@
       "url": "_framework\/dotnet.5.0.9.js"
     },
     {
-      "hash": "sha256-FXySYErbzTIW8fTXHHuKwKOI29Ho\/and0YBlEaCy6G8=",
+      "hash": "sha256-JcoJ7Ri5FQKDqOx5O3SSguwQr\/C6rW0FhwporbbJP+A=",
       "url": "_framework\/BlogBlazor.Shared.dll"
     },
     {
-      "hash": "sha256-gG+n0+QTSvLq93JyEGJwY+UsXwVxd1kAmvgx0GSWeiA=",
+      "hash": "sha256-dp45zX8EKTl6zIIaK5CGLkCkiZHOUZBvX4ZxCQk93oY=",
       "url": "_framework\/BlogBlazor.Shared.pdb"
     },
     {
-      "hash": "sha256-swo51bdxSO9FNSBWd6n2TCdIcsqpbjioyGsXO9EiOOs=",
+      "hash": "sha256-3GHaaV318eqd2mYPGYJ4ioptufIPdmhHttPrNQeSAGg=",
       "url": "_framework\/BlogBlazor.Client.dll"
     },
     {
-      "hash": "sha256-kfoMO\/fG\/Iij7Y1WLIj6TBBDVB1lW07pQLopQcyLh8A=",
+      "hash": "sha256-s0KKFiAtyrAUIjc2ajDP6o8SLI2\/CDY7IkucMo+KWdM=",
       "url": "_framework\/BlogBlazor.Client.pdb"
     },
     {
@@ -1585,7 +1585,7 @@
       "url": "_framework\/dotnet.5.0.9.js.gz"
     },
     {
-      "hash": "sha256-84hHVx58G+XeHOqsvruhKjTeFKUjgd4NeE+WvjKAYNM=",
+      "hash": "sha256-LPJlzI8ecTh3GKXUKp2UEZEzLOZqyMjZkB0aAXRZsnI=",
       "url": "_framework\/BlogBlazor.Shared.dll.gz"
     },
     {
@@ -1661,5 +1661,5 @@
       "url": "BlogBlazor.Client.bundle.scp.css"
     }
   ],
-  "version": "j58tSb8z"
+  "version": "8w4FlrQB"
 };

@@ -5,6 +5,6 @@ namespace BlogBlazor.Data.Repository
 {
     public interface IAuthorRepository : IRepository<Author>
     {
-        public Task<Author> GetAuthorByEmail(string email);
+        public Task<Author> GetAuthorByEmail(string email, string password);
     }
 }

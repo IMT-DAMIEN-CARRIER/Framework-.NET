@@ -17,5 +17,7 @@ namespace BlogBlazor.Data.Model
         public string Password { get; set; }
         [JsonIgnore]
         public List<Post> Posts { get; set; }
+        
+        public override string ToString() => $"{Firstname} {Lastname}";
     }
 }

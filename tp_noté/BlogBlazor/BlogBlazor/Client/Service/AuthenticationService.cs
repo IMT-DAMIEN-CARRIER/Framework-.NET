@@ -16,11 +16,13 @@ namespace BlogBlazor.Client.Service
             _httpclient = Httpclient;
         }
 
-        public async Task Login(string email)
+        public async Task<AuthorReadDTO> Login(string email)
         {
+            AuthorReadDTO author;
             try
             {
-                Author = await _httpclient.GetFromJsonAsync<AuthorReadDTO>("api/author/" + email);
+                author = await _httpclient.GetFromJsonAsync<AuthorReadDTO>("api/author/" + email);
+                return author;
             }
             catch (Exception e)
             {

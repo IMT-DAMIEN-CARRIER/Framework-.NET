@@ -636,3 +636,7 @@
 /Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/obj/Debug/net5.0/service-worker-assets.js
 /Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/obj/Debug/net5.0/RazorDeclaration/Pages/Register.razor.g.cs
 /Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/obj/Debug/net5.0/Razor/Pages/Register.razor.g.cs
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/obj/Debug/net5.0/RazorDeclaration/Pages/Login.razor.g.cs
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/obj/Debug/net5.0/Razor/Pages/Login.razor.g.cs
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/obj/Debug/net5.0/RazorDeclaration/Pages/Posts.razor.g.cs
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/obj/Debug/net5.0/Razor/Pages/Posts.razor.g.cs

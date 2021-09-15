@@ -1183,7 +1183,7 @@
       "outputPath": "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/dams/.nuget/NuGet/NuGet.Config"
+        "/Users/dams/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"

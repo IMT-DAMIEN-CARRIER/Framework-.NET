@@ -1,0 +1,34 @@
+@page "/Login"
+@using BlogBlazor.Client.Service
+@inject HttpClient Http
+@inject NavigationManager _navigationManager
+@inject AuthenticationService _authenticationService
+<h3>Login</h3>
+
+<EditForm OnValidSubmit="HandleValidLogin">
+    <ValidationSummary/>
+    
+    <InputText id="email" @bind-value="_email" placeholder="Votre Email" />
+    <InputText id="password" @bind-value="_password" placeholder="Votre mot de passe" />
+    <button type="submit">Connexion</button>
+</EditForm>
+
+@code {
+    private AuthorReadDTO author;
+    private string _email;
+    private string _password;
+
+    protected async Task HandleValidLogin()
+    {
+        author = await _authenticationService.Login(_email);
+
+        if (author != null)
+        {
+            _navigationManager.NavigateTo("/posts");
+        }
+        else
+        {
+            <div>Login ou mot de passe incorrecte.</div>
+        }
+    }
+}

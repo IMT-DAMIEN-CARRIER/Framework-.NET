@@ -5,7 +5,7 @@ namespace BlogBlazor.Shared.Model.Category
 {
     public class CategoryReadDTO
     {
+        public int Id { get; set; }
         public string Name { get; set; }
-        public List<PostReadDTO> Posts { get; set; }
     }
 }

@@ -31,9 +31,7 @@ namespace BlogBlazor.Server.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Author>>> GetAuthors()
         {
-            var data = _mapper.Map<IEnumerable<AuthorReadDTO>>(await _authorRepository.GetAll());
-            
-            return Ok(data);
+            return Ok(_mapper.Map<IEnumerable<AuthorReadDTO>>(await _authorRepository.GetAll()));
         }
 
         // GET: api/Author/5
@@ -50,11 +48,11 @@ namespace BlogBlazor.Server.Controllers
             return Ok(author);
         }
         
-        // GET: api/Author/email
-        [HttpGet("{email}")]
-        public async Task<ActionResult<Author>> GetAuthorByEmail(string email)
+        // GET: api/Author/email/password
+        [HttpGet("{email, password}")]
+        public async Task<ActionResult<Author>> GetAuthorByLogin(string email, string password)
         {
-            var author = _mapper.Map<AuthorReadDTO>(await _authorRepository.GetAuthorByEmail(email));
+            var author = _mapper.Map<AuthorReadDTO>(await _authorRepository.GetAuthorByEmail(email, password));
 
             if (author == null)
             {

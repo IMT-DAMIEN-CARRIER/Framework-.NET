@@ -1,15 +1,9 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
-using BlogBlazor.Data;
 using BlogBlazor.Data.Model;
 using BlogBlazor.Data.Repository;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using BlogBlazor.Shared.Model;
 using BlogBlazor.Shared.Model.Post;
 
 namespace BlogBlazor.Server.Controllers
@@ -18,10 +12,10 @@ namespace BlogBlazor.Server.Controllers
     [ApiController]
     public class PostController : ControllerBase
     {
-        private readonly PostRepository _postRepository;
+        private readonly IPostRepository _postRepository;
         private readonly IMapper _mapper;
 
-        public PostController(PostRepository postRepository, IMapper mapper)
+        public PostController(IPostRepository postRepository, IMapper mapper)
         {
             _postRepository = postRepository;
             _mapper = mapper;
@@ -31,8 +25,14 @@ namespace BlogBlazor.Server.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Post>>> GetPosts()
         {
-            var data = await _postRepository.GetAll();
-            return Ok(_mapper.Map<IEnumerable<PostReadDTO>>(data));
+            return Ok(_mapper.Map<IEnumerable<PostReadDTO>>(await _postRepository.GetAll()));
+        }
+        
+        //GET : api/Post/categoryName
+        [HttpGet("{categoryName}")]
+        public async Task<ActionResult<IEnumerable<Post>>> GetPostByCategory(string categoryName)
+        {
+            return Ok(_mapper.Map<IEnumerable<PostReadDTO>>(await _postRepository.GetPostByCategory(categoryName)));
         }
 
         // GET: api/Post/5
@@ -47,20 +47,6 @@ namespace BlogBlazor.Server.Controllers
             }
 
             return Ok(post);
-        }
-
-        //GET : api/Post/categoryName
-        [HttpGet("{categoryName}")]
-        public async Task<ActionResult<IEnumerable<Post>>> GetPostByCategory(string categoryName)
-        {
-            var posts = _mapper.Map<PostReadDTO>(await _postRepository.GetPostByCategory(categoryName));
-
-            if (posts == null)
-            {
-                return NotFound();
-            }
-            
-            return Ok(posts);
         }
 
         // PUT: api/Post/5
