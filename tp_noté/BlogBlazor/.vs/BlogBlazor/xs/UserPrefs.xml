@@ -7,10 +7,8 @@
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="BlogBlazor" expanded="True">
-            <Node name="BlogBlazor.Server" expanded="True">
-              <Node name="Program.cs" selected="True" />
-            </Node>
+          <Node name="BlogBlazor" expanded="True" selected="True">
+            <Node name="BlogBlazor.Server" expanded="True" />
           </Node>
         </State>
       </Pad>
