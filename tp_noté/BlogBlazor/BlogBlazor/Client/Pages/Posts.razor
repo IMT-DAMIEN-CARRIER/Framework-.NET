@@ -5,7 +5,9 @@
 @if (_categories != null)
 {
     <EditForm Model="@_category" OnValidSubmit="HandleFilter">
+        <DataAnnotationsValidator/>
         <ValidationSummary/>
+        
         <label>Filtrer la recherche</label>
 
         <InputSelect @bind-Value="@_category">
@@ -20,60 +22,45 @@
         <a href="/posts/add">Ajout une publication</a>
     </EditForm>
 }
-else
-{
-    <div>loading categories...</div>
-}
 
-@if (_posts == null)
+@if (_posts != null)
 {
-    <div>loading posts...</div>
-}
-else
-{
-    if (_posts.Count == 0)
+    @foreach (var item in _posts)
     {
-        <div>Aucun posts</div>
-    }
-    else
-    {
-        @foreach (var item in _posts)
+        if (@item.PublicationDate <= DateTime.Now)
         {
-            if (@item.PublicationDate <= DateTime.Now)
-            {
-                <div>
-                    <p class="font-weight-bold">Name :</p> @item.Name
-                    <p class="font-weight-bold">Description :</p> @item.Description
-                    <p class="font-weight-bold">Date de création :</p> @item.PublicationDate
-                    <p class="font-weight-bold">Contenu : </p> @item.Content
-                    <p class="font-weight-bold">Catégorie : </p> @item.Category.Name
-                    <p class="font-weight-bold">Auteur : </p> @item.Author.ToString()
-                    <p class="font-weight-bold">Détails : </p> @item.Author.ToString()
-                </div>
-                <div>
-                    <a href="/post/" + @item.Id>Détails</a>
-                </div>
-            }
+            <div>
+                <p class="font-weight-bold">Name :</p> @item.Name
+                <p class="font-weight-bold">Description :</p> @item.Description
+                <p class="font-weight-bold">Date de création :</p> @item.PublicationDate
+                <p class="font-weight-bold">Contenu : </p> @item.Content
+                <p class="font-weight-bold">Catégorie : </p> @item.Category.Name
+                <p class="font-weight-bold">Auteur : </p> @item.Author.ToString()
+                <p class="font-weight-bold">Détails : </p> @item.Author.ToString()
+            </div>
+            <div>
+                <a href="/post/" + @item.Id>Détails</a>
+            </div>
         }
     }
 }
 
 @code {
-    private List<PostReadDTO> _posts;
-    private List<CategoryReadDTO> _categories;
+    private PostReadDTO[] _posts;
+    private CategoryReadDTO[] _categories;
     private CategoryReadDTO _category = new();
 
     protected async override Task OnInitializedAsync()
     {
-        _posts = await Http.GetFromJsonAsync<List<PostReadDTO>>("api/post");
-        _categories = await Http.GetFromJsonAsync<List<CategoryReadDTO>>("api/category");
+        _posts = await Http.GetFromJsonAsync<PostReadDTO[]>("api/post");
+        _categories = await Http.GetFromJsonAsync<CategoryReadDTO[]>("api/category");
     }
 
     protected async Task HandleFilter()
     {
         if (_category != null)
         {
-            _posts = await Http.GetFromJsonAsync<List<PostReadDTO>>("api/post" + _category.Name);
+            _posts = await Http.GetFromJsonAsync<PostReadDTO[]>("api/post" + _category.Name);
         }
     }
 }

@@ -126,11 +126,19 @@ using BlogBlazor.Client.Service;
 
     protected async Task HandleValidLogin()
     {
-        _author = await _authenticationService.Login(_authorLogin);
-
-        if (_author != null)
+        try
         {
-            _navigationManager.NavigateTo("/posts");
+            _author = await _authenticationService.Login(_authorLogin);
+
+            if (_author != null)
+            {
+                _navigationManager.NavigateTo("/posts");
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw new Exception("Author not found");
         }
     }
 

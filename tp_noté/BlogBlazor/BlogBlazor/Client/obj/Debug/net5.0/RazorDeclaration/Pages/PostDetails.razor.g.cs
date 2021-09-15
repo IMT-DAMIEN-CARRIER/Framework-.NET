@@ -103,6 +103,13 @@ using BlogBlazor.Client.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/Pages/PostDetails.razor"
+using BlogBlazor.Client.Service;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/PostDatails")]
     public partial class PostDetails : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -111,6 +118,28 @@ using BlogBlazor.Client.Shared;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 15 "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/Pages/PostDetails.razor"
+       
+    private PostWriteDTO _post = new();
+    private AuthorReadDTO _author;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _author = service.Author;
+    }
+
+    protected async Task HandleValidAddPost()
+    {
+        _post.AuthorId = _author.Id;
+        await Http.PostAsJsonAsync("api/post", _post);
+    }
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private AuthenticationService service { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient Http { get; set; }
     }
 }
 #pragma warning restore 1591

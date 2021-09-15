@@ -9,9 +9,9 @@
     <DataAnnotationsValidator/>
     <ValidationSummary/>
 
-    <InputText id="email" @bind-value="@_authorLogin.Email" placeholder="Votre Email"/>
-    <InputText id="password" @bind-value="@_authorLogin.Password" placeholder="Votre mot de passe"/>
-    <button class="btn btn-primary"  type="submit">Connexion</button>
+    <InputText id="email" @bind-Value="@_authorLogin.Email" placeholder="Votre Email"/>
+    <InputText id="password" @bind-Value="@_authorLogin.Password" placeholder="Votre mot de passe"/>
+    <button class="btn btn-primary" type="submit">Connexion</button>
 </EditForm>
 
 @code {
@@ -20,11 +20,19 @@
 
     protected async Task HandleValidLogin()
     {
-        _author = await _authenticationService.Login(_authorLogin);
-
-        if (_author != null)
+        try
         {
-            _navigationManager.NavigateTo("/posts");
+            _author = await _authenticationService.Login(_authorLogin);
+
+            if (_author != null)
+            {
+                _navigationManager.NavigateTo("/posts");
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw new Exception("Author not found");
         }
     }
 }

@@ -1,8 +1,29 @@
 @page "/PostDatails"
+@using BlogBlazor.Client.Service
+@inject HttpClient Http
+@inject AuthenticationService service
 <h3>PostDetails</h3>
 
-
+<EditForm>
+    <InputText @bind-Value="@_post.Name" placeholder="Name"/>
+    <InputText @bind-Value="@_post.Description" placeholder="Description"/>
+    <InputDate @bind-Value="@_post.PublicationDate" placeholder="Date"/>
+    <InputText @bind-Value="@_post.Content" placeholder="Content"/>
+    <InputNumber @bind-Value="@_post.CategoryId" placeholder="Category Id"/>
+</EditForm>
 
 @code {
-    
+    private PostWriteDTO _post = new();
+    private AuthorReadDTO _author;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _author = service.Author;
+    }
+
+    protected async Task HandleValidAddPost()
+    {
+        _post.AuthorId = _author.Id;
+        await Http.PostAsJsonAsync("api/post", _post);
+    }
 }
