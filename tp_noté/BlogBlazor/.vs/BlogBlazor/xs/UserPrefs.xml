@@ -1,0 +1,6 @@
+﻿<Properties StartupConfiguration="{94D40EE2-6AC2-48E5-870D-F51E8AB695EE}|Default">
+  <MonoDevelop.Ide.ItemProperties.BlogBlazor.Server FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.BlogBlazor.Client FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.BlogBlazor.Shared FirstBuild="True" />
+  <MultiItemStartupConfigurations />
+</Properties>
