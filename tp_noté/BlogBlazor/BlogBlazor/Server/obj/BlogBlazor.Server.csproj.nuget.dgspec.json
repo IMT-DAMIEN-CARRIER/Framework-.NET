@@ -14,7 +14,7 @@
         "outputPath": "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor.Data/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/dams/.config/NuGet/NuGet.Config"
+          "/Users/dams/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -82,7 +82,7 @@
         "outputPath": "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/dams/.config/NuGet/NuGet.Config"
+          "/Users/dams/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -164,7 +164,7 @@
         "outputPath": "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Server/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/dams/.config/NuGet/NuGet.Config"
+          "/Users/dams/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -265,7 +265,7 @@
         "outputPath": "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Shared/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/dams/.config/NuGet/NuGet.Config"
+          "/Users/dams/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"

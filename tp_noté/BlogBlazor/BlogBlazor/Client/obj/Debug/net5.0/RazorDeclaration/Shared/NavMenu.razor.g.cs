@@ -113,13 +113,13 @@ using BlogBlazor.Client.Shared;
 #nullable restore
 #line 38 "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/Shared/NavMenu.razor"
        
-    private bool collapseNavMenu = true;
+    private bool _collapseNavMenu = true;
 
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+    private string NavMenuCssClass => _collapseNavMenu ? "collapse" : null;
 
     private void ToggleNavMenu()
     {
-        collapseNavMenu = !collapseNavMenu;
+        _collapseNavMenu = !_collapseNavMenu;
     }
 
 #line default

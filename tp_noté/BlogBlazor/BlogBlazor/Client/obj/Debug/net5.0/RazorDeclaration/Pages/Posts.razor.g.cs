@@ -112,20 +112,24 @@ using BlogBlazor.Client.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 47 "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/Pages/Posts.razor"
+#line 53 "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/Pages/Posts.razor"
        
-    private List<PostReadDTO> posts;
-    private List<CategoryReadDTO> categories;
-    EnvironmentVariableTarget category;
+    private List<PostReadDTO> _posts;
+    private List<CategoryReadDTO> _categories;
+    CategoryReadDTO _category;
 
     protected async override Task OnInitializedAsync()
     {
-        posts = await Http.GetFromJsonAsync<List<PostReadDTO>>("api/post");
-        categories = await Http.GetFromJsonAsync<List<CategoryReadDTO>>("api/category");
+        _posts = await Http.GetFromJsonAsync<List<PostReadDTO>>("api/post");
+        _categories = await Http.GetFromJsonAsync<List<CategoryReadDTO>>("api/category");
     }
 
     protected async Task HandleFilter()
     {
+        if (_category != null)
+        {
+            _posts = await Http.GetFromJsonAsync<List<PostReadDTO>>("api/post" + _category.Name);
+        }
     }
 
 #line default

@@ -2,34 +2,40 @@
 @inject HttpClient Http
 <h3>Nos publication</h3>
 
-@if (categories != null)
+@if (_categories != null)
 {
-    <div>
+    <EditForm>
         <label>Filtrer la recherche</label>
-        <select name="categoryFilter" id="categoryFilter">
+        
+        <InputSelect @bind-Value="_category">
             <option value="0"></option>
-            @foreach (var item in categories)
+            @foreach (var item in _categories)
             {
                 <option value="@item.Id">@item.Name</option>
             }
-        </select>
+        </InputSelect>
+        
         <button class="btn btn-primary" @onclick="HandleFilter" type="submit">Filtrer</button>
-    </div>
-}
-
-@if (posts == null)
-{
-    <div>loading...</div>
+    </EditForm>
 }
 else
 {
-    if (posts.Count == 0)
+    <div>loading categories...</div>
+}
+
+@if (_posts == null)
+{
+    <div>loading posts...</div>
+}
+else
+{
+    if (_posts.Count == 0)
     {
         <div>Aucun posts</div>
     }
     else
     {
-        @foreach (var item in posts)
+        @foreach (var item in _posts)
         {
             if (@item.PublicationDate <= DateTime.Now)
             {
@@ -45,17 +51,21 @@ else
 }
 
 @code {
-    private List<PostReadDTO> posts;
-    private List<CategoryReadDTO> categories;
-    EnvironmentVariableTarget category;
+    private List<PostReadDTO> _posts;
+    private List<CategoryReadDTO> _categories;
+    CategoryReadDTO _category;
 
     protected async override Task OnInitializedAsync()
     {
-        posts = await Http.GetFromJsonAsync<List<PostReadDTO>>("api/post");
-        categories = await Http.GetFromJsonAsync<List<CategoryReadDTO>>("api/category");
+        _posts = await Http.GetFromJsonAsync<List<PostReadDTO>>("api/post");
+        _categories = await Http.GetFromJsonAsync<List<CategoryReadDTO>>("api/category");
     }
 
     protected async Task HandleFilter()
     {
+        if (_category != null)
+        {
+            _posts = await Http.GetFromJsonAsync<List<PostReadDTO>>("api/post" + _category.Name);
+        }
     }
 }

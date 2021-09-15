@@ -133,17 +133,6 @@ using BlogBlazor.Client.Service;
         {
             _navigationManager.NavigateTo("/posts");
         }
-        else
-        {
-
-#line default
-#line hidden
-#nullable disable
-        __builder.AddContent(0, "            ");
-        __builder.AddMarkupContent(1, "<div>Login ou mot de passe incorrecte.</div>\n");
-#nullable restore
-#line 32 "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/Pages/Login.razor"
-        }
     }
 
 #line default
