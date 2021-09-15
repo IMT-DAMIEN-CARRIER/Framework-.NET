@@ -1,0 +1,49 @@
+﻿@page "/pizza"
+@inject HttpClient http
+
+<h3>PizzaPage</h3>
+
+@if (pizzas == null)
+{
+    <div>loading...</div>
+}
+else
+{
+    if (pizzas.Count == 0)
+    {
+        <div>pas de pizza!!</div>
+    }
+    else
+    {
+        @foreach (var item in pizzas)
+        {
+            <div>@item.Name</div>
+        }
+    }
+}
+
+<EditForm Model="newPizza" OnValidSubmit="AddPizza">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+    <ValidationSummary></ValidationSummary>
+
+    <InputText @bind-Value="newPizza.Name"></InputText>
+
+    <button type="submit">Save</button>
+</EditForm>
+
+@code {
+    private List<PizzaReadDTO> pizzas;
+
+    private PizzaWriteDTO newPizza = new();
+
+    protected async override Task OnInitializedAsync()
+    {
+        pizzas = await http.GetFromJsonAsync<List<PizzaReadDTO>>("api/pizza");
+    }
+
+    private async Task AddPizza()
+    {
+        await http.PostAsJsonAsync("api/pizza", newPizza);
+        newPizza = new();
+    }
+}
