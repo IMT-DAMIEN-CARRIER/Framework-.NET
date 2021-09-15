@@ -10,3 +10,6 @@
 /Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor.Data/obj/Debug/net5.0/BlogBlazor.Data.dll
 /Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor.Data/obj/Debug/net5.0/ref/BlogBlazor.Data.dll
 /Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor.Data/obj/Debug/net5.0/BlogBlazor.Data.pdb
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor.Data/bin/Debug/net5.0/BlogBlazor.Data.runtimeconfig.json
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor.Data/bin/Debug/net5.0/BlogBlazor.Data.runtimeconfig.dev.json
+/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor.Data/obj/Debug/net5.0/BlogBlazor.Data.genruntimeconfig.cache

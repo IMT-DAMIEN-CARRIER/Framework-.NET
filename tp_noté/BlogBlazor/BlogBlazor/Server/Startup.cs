@@ -1,12 +1,9 @@
 ﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System.Linq;
-using BlogBlazor.Server.Model;
+using BlogBlazor.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -26,11 +23,12 @@ namespace BlogBlazor.Server
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAutoMapper(typeof(Startup));
-            services.AddDbContext<MyContext>(options => options.UseSqlite("Data Source=blog.db"));
+            services.AddDbContext<MyContext>(options =>
+            {
+                options.UseSqlite("Data Source=blog.db", b => b.MigrationsAssembly("BlogBlazor.Server"));
+            });
             services.AddControllersWithViews();
             services.AddRazorPages();
-            services.AddControllers();
-            services.AddAutoMapper(typeof(Startup));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo() { Title = "BlogBlazerAPI", Version = "v1" });

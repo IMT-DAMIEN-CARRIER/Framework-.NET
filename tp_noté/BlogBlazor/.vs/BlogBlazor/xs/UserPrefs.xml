@@ -6,7 +6,7 @@
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="BlogBlazor" expanded="True">
-            <Node name="BlogBlazor.Server" selected="True" />
+            <Node name="BlogBlazor.Server" expanded="True" selected="True" />
           </Node>
         </State>
       </Pad>

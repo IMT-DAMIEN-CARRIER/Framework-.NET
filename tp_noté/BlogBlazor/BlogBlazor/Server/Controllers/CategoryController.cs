@@ -2,11 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BlogBlazor.Data;
 using BlogBlazor.Data.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using BlogBlazor.Server.Model;
 using BlogBlazor.Shared.Model;
 
 namespace BlogBlazor.Server.Controllers

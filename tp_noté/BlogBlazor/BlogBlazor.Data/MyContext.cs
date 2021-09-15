@@ -1,8 +1,7 @@
 using BlogBlazor.Data.Model;
-using BlogBlazor.Shared.Model;
 using Microsoft.EntityFrameworkCore;
 
-namespace BlogBlazor.Server.Model
+namespace BlogBlazor.Data
 {
     public class MyContext : DbContext
     {
