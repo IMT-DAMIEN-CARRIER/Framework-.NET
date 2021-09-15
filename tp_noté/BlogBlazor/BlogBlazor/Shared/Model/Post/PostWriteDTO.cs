@@ -9,7 +9,7 @@ namespace BlogBlazor.Shared.Model.Post
         public string Name { get; set; }
         public string Description { get; set; }
         public DataType PublicationDate { get; set; }
-        public CategoryIdReadDTO CategoryId { get; set; }
-        public AuthorIdReadDTO AuthorId { get; set; }
+        public int CategoryId { get; set; }
+        public int AuthorId { get; set; }
     }
 }

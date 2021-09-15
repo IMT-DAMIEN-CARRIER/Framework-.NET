@@ -14,8 +14,10 @@ namespace BlogBlazor.Data.Model
         [Required]
         public string Content { get; set; }
         [Required]
+        public int CategoryId { get; set; }
         public Category Category { get; set; }
         [Required]
+        public int AuthorId { get; set; }
         public Author Author { get; set; }
     }
 }
