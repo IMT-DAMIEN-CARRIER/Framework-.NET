@@ -42,6 +42,20 @@ namespace BlogBlazor.Server.Controllers
             return post;
         }
 
+        //GET : api/Post/Category/categoryName
+        [HttpGet("{categoryName}")]
+        public async Task<ActionResult<IEnumerable<Post>>> GetPostByCategory(string categoryName)
+        {
+            var posts = await _context.Posts.Where(p => p.Category.Name.Equals(categoryName)).ToListAsync();
+
+            if (posts == null)
+            {
+                return NotFound();
+            }
+            
+            return posts;
+        }
+
         // PUT: api/Post/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id:int}")]

@@ -43,10 +43,10 @@ namespace BlogBlazor.Server.Controllers
         }
         
         // GET: api/Author/email
-        [HttpGet("{email:string}")]
+        [HttpGet("{email}")]
         public async Task<ActionResult<Author>> GetAuthorByEmail(string email)
         {
-            var author = await _context.Authors.Where(a => a.Email == email).FirstAsync();
+            var author = await _context.Authors.Where(a => a.Email.Equals(email)).FirstOrDefaultAsync();
 
             if (author == null)
             {

@@ -97,7 +97,7 @@ using BlogBlazor.Client.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 33 "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/Shared/NavMenu.razor"
+#line 38 "/Users/dams/IMT/3A/dotnet/framework-dot-net/tp_noté/BlogBlazor/BlogBlazor/Client/Shared/NavMenu.razor"
        
     private bool collapseNavMenu = true;
 
